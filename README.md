@@ -11,7 +11,7 @@ $ pip install cookiecutter
 2. Run `cookiecutter` with:
 
 ```shell
-$ cookiecutter https://github.com/cthoyt/python-package-cookiecutter
+$ cookiecutter https://github.com/cthoyt/cookiecutter-python-package
 ```
 
 3. Enter the requested information, then win!
