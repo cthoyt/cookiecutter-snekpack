@@ -19,6 +19,8 @@ A cookiecutter for making new Python repositories
     ```shell
     $ cookiecutter https://github.com/cthoyt/cookiecutter-python-package --output-path glorious_avocado
     ```
+   
+   Change `glorious_avocado` to your package name.
 
 4. Enter the requested information, then win! Remember, package names should only have letters, numbers,
    and underscores.
