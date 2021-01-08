@@ -50,6 +50,17 @@ $ cd {{cookiecutter.github_repository_name}}
 $ pip install -e .
 ```
 
+## 💪 Usage
+
+### Command Line Interface
+
+The {{cookiecutter.package_name}} command line tool is automatically installed. It can
+be used from the shell with the `--help` flag to show all subcommands:
+
+```shell
+$ {{cookiecutter.package_name}} --help
+```
+
 ## ⚖️ License
 
 The code in this package is licensed under the MIT License.
