@@ -26,3 +26,30 @@
 </p>
 
 {{cookiecutter.short_description}}
+
+## ⬇️ Installation
+
+The most recent release can be installed from
+[PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
+
+```bash
+$ pip install {{cookiecutter.package_name}}
+```
+
+The most recent code and data can be installed directly from GitHub with:
+
+```bash
+$ pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+```
+
+To install in development mode, use the following:
+
+```bash
+$ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+$ cd {{cookiecutter.github_repository_name}}
+$ pip install -e .
+```
+
+## ⚖️ License
+
+The code in this package is licensed under the MIT License.
