@@ -11,7 +11,7 @@ $ pip install cookiecutter
 2. Run `cookiecutter` with:
 
 ```shell
-$ cookiecutter https://github.com/bio2bel/bio2bel-cookiecutter
+$ cookiecutter https://github.com/cthoyt/python-package-cookiecutter
 ```
 
 3. Enter the requested information, then win!
