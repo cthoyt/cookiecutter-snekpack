@@ -71,6 +71,11 @@ $ pip install -e .
 
 The code in this package is licensed under the MIT License.
 
+## 🙏 Contributing
+Contributions, whether filing an issue, making a pull request, or forking, are appreciated. See
+[CONTRIBUTING.rst](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/CONTRIBUTING.rst) for more information on getting
+involved.
+
 ## 🍪 Cookiecutter Acknowledgement
 
 This package was created with [@audreyr](https://github.com/audreyr)'s
