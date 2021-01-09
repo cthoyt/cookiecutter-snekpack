@@ -110,7 +110,7 @@ $ tox -e finish
 This script does the following:
 
 1. Uses BumpVersion to switch the version number in the `setup.cfg` and
-   `src/bel2scm/version.py` to not have the `-dev` suffix
+   `src/{{cookiecutter.package_name}}/version.py` to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel
 3. Uploads to PyPI using `twine`. Be sure to have a `.pypirc` file configured to avoid the need for manual input at this
    step
