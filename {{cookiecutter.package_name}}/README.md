@@ -96,3 +96,9 @@ This script does the following:
 4. Push to GitHub. You'll need to make a release going with the commit where the version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump the version by minor, you can
    use `tox -e bumpversion minor` after.
+   
+## 🍪 Cookiecutter Acknowledgement
+
+This package was created with [@audreyr](https://github.com/audreyr)'s
+[cookiecutter](https://github.com/cookiecutter/cookiecutter) package using [@cthoyt](https://github.com/cthoyt)'s
+[cookiecutter-python-package](https://github.com/cthoyt/cookiecutter-python-package) template.
