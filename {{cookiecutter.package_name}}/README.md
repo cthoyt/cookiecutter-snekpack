@@ -10,7 +10,7 @@
 
 <p align="center">
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions?query=workflow%3ATests">
-        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/workflows/Check%20mappings/badge.svg" />
+        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/workflows/Tests/badge.svg" />
     </a>
     <!-- Uncomment after deploying to PyPI
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
