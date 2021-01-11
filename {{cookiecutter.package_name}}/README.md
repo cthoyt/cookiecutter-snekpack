@@ -12,10 +12,9 @@
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions?query=workflow%3ATests">
         <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/workflows/Tests/badge.svg" />
     </a>
-   <a href="https://github.com/cthoyt/cookiecutter-python-package">
-      <img alt="Cookiecutter template from @cthoyt" src="https://img.shields.io/badge/Cookiecutter-python--package-yellow" /> 
-   </a>
-    <!-- Uncomment after deploying to PyPI
+    <a href="https://github.com/cthoyt/cookiecutter-python-package">
+        <img alt="Cookiecutter template from @cthoyt" src="https://img.shields.io/badge/Cookiecutter-python--package-yellow" /> 
+    </a>
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.package_name}}" />
     </a>
@@ -25,7 +24,9 @@
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/main/LICENSE">
         <img alt="PyPI - License" src="https://img.shields.io/pypi/l/{{cookiecutter.package_name}}" />
     </a>
-    -->
+    <a href='https://{{cookiecutter.package_name}}.readthedocs.io/en/latest/?badge=latest'>
+        <img src='https://readthedocs.org/projects/{{cookiecutter.package_name}}/badge/?version=latest' alt='Documentation Status' />
+    </a>
 </p>
 
 {{cookiecutter.short_description}}
