@@ -25,28 +25,28 @@ Want to Contribute?
    https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}
 2. Clone your directory with
 
-.. code-block::
+.. code-block:: sh
 
     $ git clone https://github.com/<YourUsername>/{{cookiecutter.github_repository_name}}
 
 3. Install with :code:`pip`. The flag, :code:`-e`, makes your installation editable, so your changes will be reflected
-automatically in your installation.
+   automatically in your installation.
 
-.. code-block::
+.. code-block:: sh
 
     $ cd {{cookiecutter.github_repository_name}}
     $ python3 -m pip install -e .
 
 4. Make a branch off of develop, then make contributions! This line makes a new branch and checks it out
 
-.. code-block::
+.. code-block:: sh
 
     $ git checkout -b feature/<YourFeatureName>
 
 5. This project should be well tested, so write unit tests in the :code:`tests/` directory
 6. Check that all tests are passing and code coverage is good with :code:`tox` before committing.
 
-.. code-block::
+.. code-block:: sh
 
     $ tox
 
@@ -68,20 +68,20 @@ conflicts.
 
 To pull in upstream changes:
 
-.. code-block::
+.. code-block:: sh
 
     $ git remote add upstream https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}
     $ git fetch upstream develop
 
-Check the log to make sure the upstream changes don't affect your work too much::
+Check the log to make sure the upstream changes don't affect your work too much:
 
-.. code-block::
+.. code-block:: sh
 
     $ git log upstream/develop
 
 Then merge in the new changes:
 
-.. code-block::
+.. code-block:: sh
 
     $ git merge upstream/develop
 
