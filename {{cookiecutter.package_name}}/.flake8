@@ -4,10 +4,11 @@
 #########################
 [flake8]
 ignore =
-    # Line break before binary operator (flake8 is wrong)
-    W503
+    S301 # pickle
+    S403 # pickle
     S404
     S603
+    W503 # Line break before binary operator (flake8 is wrong)
 exclude =
     .tox,
     .git,
