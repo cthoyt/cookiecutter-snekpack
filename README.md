@@ -7,6 +7,13 @@ This template is different from [@audreyr](https://github.com/audreyr)'s
 layout and has lots of code quality assurance checks built in. If you're looking for something similar but not quite
 like this, try her package or see her [list of alternatives](https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#similar-cookiecutter-templates).
 
+I've written several blog posts outlining all of the ideas that made it into this template:
+
+- [Blog: Flake8]({% post_url 2020-04-25-how-to-code-with-me-flake8 %})
+- [Blog: Packaging]({% post_url 2020-06-03-how-to-code-with-me-organization %})
+- [Blog: CLIs]({% post_url 2020-06-11-click %})
+- [Blog: CLIs and Flask]({% post_url 2021-01-11-click-and-flask %})
+
 ## 🛠️ Getting Started
 
 1. Install `cookiecutter` with:
