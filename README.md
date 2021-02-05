@@ -9,10 +9,10 @@ like this, try her package or see her [list of alternatives](https://cookiecutte
 
 I've written several blog posts outlining all of the ideas that made it into this template:
 
-- [Blog: Flake8]({% post_url 2020-04-25-how-to-code-with-me-flake8 %})
-- [Blog: Packaging]({% post_url 2020-06-03-how-to-code-with-me-organization %})
-- [Blog: CLIs]({% post_url 2020-06-11-click %})
-- [Blog: CLIs and Flask]({% post_url 2021-01-11-click-and-flask %})
+- [Blog: Flake8](https://cthoyt.com/2020/04/25/how-to-code-with-me-flake8)
+- [Blog: Packaging](https://cthoyt.com/2020/06/03/how-to-code-with-me-organization)
+- [Blog: CLIs](https://cthoyt.com/2020/06/11/click)
+- [Blog: CLIs and Flask](https://cthoyt.com/2021/01/11/click-and-flask)
 
 ## 🛠️ Getting Started
 
