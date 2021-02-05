@@ -1,4 +1,4 @@
-# Python Cookiecutter
+# Cookiecutter Python Package
 
 A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Python repositories.
 
@@ -45,7 +45,7 @@ Your new python package will have the following:
 - Testing of MANIFEST correctness with `check-manifest` in `tox`
 - Automated running of tests on each push with GitHub Actions
 - Configuration for ReadTheDocs
-- A good base `.gitignore` generated from `gitignore.io <https://gitignore.io>`_.
+- A good base `.gitignore` generated from [gitignore.io](https://gitignore.io).
 - A pre-formatted README with badges
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
