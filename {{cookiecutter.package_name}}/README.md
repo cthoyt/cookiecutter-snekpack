@@ -50,12 +50,14 @@ by sphinx.
 
 ## ⬇️ Installation
 
+<!-- Uncomment this section after your first ``tox -e finish``
 The most recent release can be installed from
 [PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
 
 ```bash
 $ pip install {{cookiecutter.package_name}}
 ```
+-->
 
 The most recent code and data can be installed directly from GitHub with:
 
