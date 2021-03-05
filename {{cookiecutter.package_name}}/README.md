@@ -84,7 +84,7 @@ involved.
 
 ## 🍪 Cookiecutter Acknowledgement
 
-This package was created with [@audreyr](https://github.com/audreyr)'s
+This package was created with [@audreyfeldroy](https://github.com/audreyfeldroy)'s
 [cookiecutter](https://github.com/cookiecutter/cookiecutter) package using [@cthoyt](https://github.com/cthoyt)'s
 [cookiecutter-python-package](https://github.com/cthoyt/cookiecutter-python-package) template.
 
