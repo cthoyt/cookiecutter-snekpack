@@ -31,7 +31,7 @@
 
 {{cookiecutter.short_description}}
 
-## 💪 Getting Started
+## 🚀 Getting Started
 
 > TODO show in a very small amount of space the **MOST** useful thing your package can do.
 Make it as short as possible! You have an entire set of docs for later.
@@ -82,13 +82,15 @@ Contributions, whether filing an issue, making a pull request, or forking, are a
 [CONTRIBUTING.rst](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/CONTRIBUTING.rst) for more information on getting
 involved.
 
-## 🍪 Cookiecutter Acknowledgement
+## Acknowledgements
+
+### 🍪 Cookiecutter
 
 This package was created with [@audreyfeldroy](https://github.com/audreyfeldroy)'s
 [cookiecutter](https://github.com/cookiecutter/cookiecutter) package using [@cthoyt](https://github.com/cthoyt)'s
 [cookiecutter-python-package](https://github.com/cthoyt/cookiecutter-python-package) template.
 
-## 🛠️ Development
+## 🛠️ For Developers
 
 The final section of the README is for if you want to get involved by making a code contribution.
 
