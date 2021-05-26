@@ -1,6 +1,6 @@
 <!--
 <p align="center">
-  <img src="docs/source/logo.png" height="150">
+  <img src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/raw/main/docs/source/logo.png" height="150">
 </p>
 -->
 
