@@ -1,4 +1,4 @@
-# Cookiecutter Python Package
+# Cookiecutter Sneckpack
 
 A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Python repositories.
 
@@ -25,7 +25,7 @@ I've written several blog posts outlining all of the ideas that made it into thi
 2. Run `cookiecutter` with:
 
     ```shell
-    $ cookiecutter https://github.com/cthoyt/cookiecutter-python-package
+    $ cookiecutter https://github.com/cthoyt/cookiecutter-snekpack
     ```
 
 3. Enter the requested information, then win! Remember, package names should only have letters, numbers,

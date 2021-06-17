@@ -31,7 +31,7 @@
 
 {{cookiecutter.short_description}}
 
-## 🚀 Getting Started
+## 💪 Getting Started
 
 > TODO show in a very small amount of space the **MOST** useful thing your package can do.
 Make it as short as possible! You have an entire set of docs for later.
@@ -45,10 +45,10 @@ be used from the shell with the `--help` flag to show all subcommands:
 $ {{cookiecutter.package_name}} --help
 ```
 
-> TODO show the most useful thing the CLI does! The CLI will have document auto-generated
-by sphinx.
+> TODO show the most useful thing the CLI does! The CLI will have documentation auto-generated
+by `sphinx`.
 
-## ⬇️ Installation
+## 🚀 Installation
 
 <!-- Uncomment this section after your first ``tox -e finish``
 The most recent release can be installed from
@@ -77,18 +77,31 @@ $ pip install -e .
 
 The code in this package is licensed under the MIT License.
 
-## 🙏 Contributing
+## 👐 Contributing
+
 Contributions, whether filing an issue, making a pull request, or forking, are appreciated. See
 [CONTRIBUTING.rst](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/CONTRIBUTING.rst) for more information on getting
 involved.
 
 ## Acknowledgements
 
+<!--
+## 🙏 Supporters
+
+This project has been supported by the following organizations (in alphabetical order):
+-->
+
+<!--
+## 💰 Funding
+
+This project has been supported by the following grants:
+-->
+
 ### 🍪 Cookiecutter
 
 This package was created with [@audreyfeldroy](https://github.com/audreyfeldroy)'s
 [cookiecutter](https://github.com/cookiecutter/cookiecutter) package using [@cthoyt](https://github.com/cthoyt)'s
-[cookiecutter-python-package](https://github.com/cthoyt/cookiecutter-python-package) template.
+[cookiecutter-snekpack](https://github.com/cthoyt/cookiecutter-snekpack) template.
 
 ## 🛠️ For Developers
 
