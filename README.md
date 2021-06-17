@@ -1,4 +1,4 @@
-# Cookiecutter Sneckpack
+# Cookiecutter Snekpack
 
 A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Python repositories.
 
