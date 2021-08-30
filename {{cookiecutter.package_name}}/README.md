@@ -81,7 +81,7 @@ $ pip install -e .
 Contributions, whether filing an issue, making a pull request, or forking, are appreciated. See
 [CONTRIBUTING.rst](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/CONTRIBUTING.rst) for more information on getting involved.
 
-## 👀 Attribution
+## 👋 Attribution
 
 ### ⚖️ License
 
@@ -92,8 +92,6 @@ The code in this package is licensed under the MIT License.
 
 Citation goes here!
 -->
-
-## Acknowledgements
 
 <!--
 ### 🎁 Support
@@ -122,6 +120,10 @@ This package was created with [@audreyfeldroy](https://github.com/audreyfeldroy)
 
 ## 🛠️ For Developers
 
+<details>
+  <summary>See developer instrutions</summary>
+
+  
 The final section of the README is for if you want to get involved by making a code contribution.
 
 ### ❓ Testing
@@ -155,3 +157,4 @@ This script does the following:
 4. Push to GitHub. You'll need to make a release going with the commit where the version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump the version by minor, you can
    use `tox -e bumpversion minor` after.
+</details>
