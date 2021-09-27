@@ -230,3 +230,7 @@ intersphinx_mapping = {
 }
 
 autoclass_content = 'both'
+
+# Don't sort alphabetically, explained at:
+# https://stackoverflow.com/questions/37209921/python-how-not-to-sort-sphinx-output-in-alphabetical-order
+autodoc_member_order = 'bysource'
