@@ -18,7 +18,7 @@ import logging
 import click
 
 __all__ = [
-  "main",
+    "main",
 ]
 
 logger = logging.getLogger(__name__)
