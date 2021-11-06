@@ -37,5 +37,5 @@ def get_version(with_git_hash: bool = False):
     return f"{VERSION}-{get_git_hash()}" if with_git_hash else VERSION
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(get_version(with_git_hash=True))
