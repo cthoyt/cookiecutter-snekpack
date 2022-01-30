@@ -126,7 +126,7 @@ This package was created with [@audreyfeldroy](https://github.com/audreyfeldroy)
   
 The final section of the README is for if you want to get involved by making a code contribution.
 
-### ❓ Testing
+### 🥼 Testing
 
 After cloning the repository and installing `tox` with `pip install tox`, the unit tests in the `tests/` folder can be
 run reproducibly with:
@@ -136,6 +136,12 @@ $ tox
 ```
 
 Additionally, these tests are automatically re-run with each commit in a [GitHub Action](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions?query=workflow%3ATests).
+
+### 📖 Building the Documentation
+
+```shell
+$ tox -e docs
+``` 
 
 ### 📦 Making a Release
 
@@ -149,7 +155,7 @@ $ tox -e finish
 
 This script does the following:
 
-1. Uses BumpVersion to switch the version number in the `setup.cfg` and
+1. Uses [Bump2Version](https://github.com/c4urself/bump2version) to switch the version number in the `setup.cfg` and
    `src/{{cookiecutter.package_name}}/version.py` to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel
 3. Uploads to PyPI using `twine`. Be sure to have a `.pypirc` file configured to avoid the need for manual input at this
