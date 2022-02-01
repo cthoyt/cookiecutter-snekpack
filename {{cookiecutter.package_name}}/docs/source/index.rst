@@ -4,7 +4,7 @@
 Cookiecutter
 ------------
 This package was created with the `cookiecutter <https://github.com/cookiecutter/cookiecutter>`_
-package using `cookiecutter-snekpack <https://github.com/cthoyt/cookiecutter-snekpack`>_ template.
+package using `cookiecutter-snekpack <https://github.com/cthoyt/cookiecutter-snekpack>`_ template.
 It comes with the following:
 
 - Standard `src/` layout
