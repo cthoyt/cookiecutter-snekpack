@@ -9,8 +9,8 @@ It comes with the following:
 
 - Standard `src/` layout
 - Declarative setup with `setup.cfg`
-- Reproducible tests with `pytest` and `tox`
-- A command line interface with `click`
+- Reproducible tests with `pytest` and `tox`{% if cookiecutter.command_line_interface|lower != "false" %}
+- A command line interface with `click`{% endif %}
 - A vanity CLI via python entrypoints
 - Version management with `bumpversion`
 - Documentation build with `sphinx`
@@ -36,7 +36,7 @@ Table of Contents
 
    installation
    usage
-   cli
+{% if cookiecutter.command_line_interface|lower != "false" %}   cli{% endif %}
 
 Indices and Tables
 ------------------

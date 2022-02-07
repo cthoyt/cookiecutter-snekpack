@@ -64,7 +64,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx_autodoc_typehints',
-    'sphinx_click.ext',
+{% if cookiecutter.command_line_interface|lower != "false" %}    'sphinx_click.ext',{% endif %}
     'sphinx_automodapi.automodapi',
     'sphinx_automodapi.smart_resolver',
     # 'texext',
