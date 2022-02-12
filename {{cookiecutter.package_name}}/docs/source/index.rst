@@ -19,6 +19,8 @@ It comes with the following:
 - Testing of documentation format and build in `tox`
 - Testing of package metadata completeness with `pyroma` in `tox`
 - Testing of MANIFEST correctness with `check-manifest` in `tox`
+- Testing of optional static typing with `mypy` in `tox`
+- A `py.typed` file so other packages can use your type hints
 - Automated running of tests on each push with GitHub Actions
 - Configuration for `ReadTheDocs <https://readthedocs.org/>`_
 - A good base `.gitignore` generated from `gitignore.io <https://gitignore.io>`_.
