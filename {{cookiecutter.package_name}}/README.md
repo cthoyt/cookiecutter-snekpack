@@ -13,7 +13,7 @@
         <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/workflows/Tests/badge.svg" />
     </a>
     <a href="https://github.com/cthoyt/cookiecutter-python-package">
-        <img alt="Cookiecutter template from @cthoyt" src="https://img.shields.io/badge/Cookiecutter-python--package-yellow" /> 
+        <img alt="Cookiecutter template from @cthoyt" src="https://img.shields.io/badge/Cookiecutter-snekpack-blue" /> 
     </a>
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.package_name}}" />
