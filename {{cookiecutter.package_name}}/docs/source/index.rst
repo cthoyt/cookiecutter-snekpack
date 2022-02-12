@@ -8,7 +8,7 @@ package using `cookiecutter-snekpack <https://github.com/cthoyt/cookiecutter-sne
 It comes with the following:
 
 - Standard `src/` layout
-- Declarative setup with `setup.cfg`
+- Declarative setup with `setup.cfg` and `pyproject.toml`
 - Reproducible tests with `pytest` and `tox`{% if cookiecutter.command_line_interface|lower != "false" %}
 - A command line interface with `click`{% endif %}
 - A vanity CLI via python entrypoints
@@ -20,7 +20,7 @@ It comes with the following:
 - Testing of package metadata completeness with `pyroma` in `tox`
 - Testing of MANIFEST correctness with `check-manifest` in `tox`
 - Automated running of tests on each push with GitHub Actions
-- Configuration for ReadTheDocs
+- Configuration for `ReadTheDocs <https://readthedocs.org/>`_
 - A good base `.gitignore` generated from `gitignore.io <https://gitignore.io>`_.
 - A pre-formatted README with badges
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
