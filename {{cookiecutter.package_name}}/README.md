@@ -33,6 +33,9 @@
     <a href='https://github.com/psf/black'>
         <img src='https://img.shields.io/badge/code%20style-black-000000.svg' alt='Code style: black' />
     </a>
+    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/main/.github/CODE_OF_CONDUCT.md">
+        <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant"/>
+    </a>
 </p>
 
 {{cookiecutter.short_description}}

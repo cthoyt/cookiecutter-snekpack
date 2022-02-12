@@ -26,6 +26,7 @@ It comes with the following:
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
 - Automatic tool for releasing to PyPI with ``tox -e finish``
+- A copy of the `Contributor Covenant <https://www.contributor-covenant.org>`_ as a basic code of conduct
 
 Table of Contents
 -----------------
