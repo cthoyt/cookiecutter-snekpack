@@ -147,9 +147,19 @@ Additionally, these tests are automatically re-run with each commit in a [GitHub
 
 ### 📖 Building the Documentation
 
+The documentation can be built locally using the following:
+
 ```shell
+$ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+$ cd {{cookiecutter.github_repository_name}}
 $ tox -e docs
+$ open docs/build/html/index.html
 ``` 
+
+The documentation automatically installs the package as well as the `docs`
+extra specified in the [`setup.cfg`](setup.cfg). `sphinx` plugins
+like `texext` can be added there. Additionally, they need to be added to the
+`extensions` list in [`docs/source/conf.py`](docs/source/conf.py).
 
 ### 📦 Making a Release
 
