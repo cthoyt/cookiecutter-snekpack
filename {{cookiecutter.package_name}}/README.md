@@ -27,6 +27,9 @@
     <a href='https://{{cookiecutter.package_name}}.readthedocs.io/en/latest/?badge=latest'>
         <img src='https://readthedocs.org/projects/{{cookiecutter.package_name}}/badge/?version=latest' alt='Documentation Status' />
     </a>
+    <a href="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/branch/main">
+        <img src="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/branch/main/graph/badge.svg" alt="Codecov status" />
+    </a>  
     <a href='https://github.com/psf/black'>
         <img src='https://img.shields.io/badge/code%20style-black-000000.svg' alt='Code style: black' />
     </a>
