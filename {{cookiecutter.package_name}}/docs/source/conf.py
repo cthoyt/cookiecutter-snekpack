@@ -69,6 +69,10 @@ extensions = [
     # 'texext',
 ]
 
+{% if cookiecutter.command_line_interface|lower == "true" %}
+extensions.append("sphinx_click.ext")
+{% endif %}
+
 # generate autosummary pages
 autosummary_generate = True
 
