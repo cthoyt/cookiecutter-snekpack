@@ -10,7 +10,7 @@ later, but that will cause problems--the code will get executed twice:
 - When you import __main__ it will get executed again (as a module) because
   there's no ``{{cookiecutter.package_name}}.__main__`` in ``sys.modules``.
 
-.. seealso:: https://click.palletsprojects.com/en/7.x/setuptools/#setuptools-integration
+.. seealso:: https://click.palletsprojects.com/en/8.1.x/setuptools/#setuptools-integration
 """
 
 import logging
