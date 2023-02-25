@@ -43,7 +43,7 @@
 ## 💪 Getting Started
 
 > TODO show in a very small amount of space the **MOST** useful thing your package can do.
-Make it as short as possible! You have an entire set of docs for later.
+> Make it as short as possible! You have an entire set of docs for later.
 
 {% if cookiecutter.command_line_interface|lower != "false" %}### Command Line Interface
 
@@ -55,7 +55,7 @@ $ {{cookiecutter.package_name}} --help
 ```
 
 > TODO show the most useful thing the CLI does! The CLI will have documentation auto-generated
-by `sphinx`.
+> by `sphinx`.
 {% endif %}
 ## 🚀 Installation
 
@@ -63,7 +63,7 @@ by `sphinx`.
 The most recent release can be installed from
 [PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
 
-```bash
+```shell
 $ pip install {{cookiecutter.package_name}}
 ```
 -->
@@ -120,7 +120,6 @@ This package was created with [@audreyfeldroy](https://github.com/audreyfeldroy)
 
 <details>
   <summary>See developer instructions</summary>
-
 
 The final section of the README is for if you want to get involved by making a code contribution.
 
@@ -180,5 +179,5 @@ This script does the following:
    step
 4. Push to GitHub. You'll need to make a release going with the commit where the version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump the version by minor, you can
-   use `tox -e bumpversion minor` after.
+   use `tox -e bumpversion -- minor` after.
 </details>
