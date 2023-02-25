@@ -9,8 +9,8 @@
 </h1>
 
 <p align="center">
-    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions?query=workflow%3ATests">
-        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/workflows/Tests/badge.svg" />
+    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions/workflows/tests.yml">
+        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/workflows/tests.yml/badge.svg" />
     </a>
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.package_name}}" />
