@@ -105,7 +105,7 @@ configuration.
 See https://endoflife.date/python for a timeline of Python release and
 end-of-life dates.
 
-## Acknowledgements 
+## Acknowledgements
 
 These code contribution guidelines are derived from the [cthoyt/cookiecutter-snekpack](https://github.com/cthoyt/cookiecutter-snekpack)
 Python package template. They're free to reuse and modify as long as they're properly acknowledged.

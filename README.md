@@ -18,15 +18,15 @@ I've written several blog posts outlining all of the ideas that made it into thi
 
 1. Install `cookiecutter` with:
 
-    ```shell
-    $ pip install cookiecutter
-    ```
+   ```shell
+   $ pip install cookiecutter
+   ```
 
 2. Run `cookiecutter` with:
 
-    ```shell
-    $ cookiecutter https://github.com/cthoyt/cookiecutter-snekpack
-    ```
+   ```shell
+   $ cookiecutter https://github.com/cthoyt/cookiecutter-snekpack
+   ```
 
 3. Enter the requested information, then win! Remember, package names should only have letters, numbers,
    and underscores.
