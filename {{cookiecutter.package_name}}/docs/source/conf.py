@@ -140,7 +140,7 @@ if os.path.exists("logo.png"):
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "{{cookiecutter.package_name_stylized}}doc"
+htmlhelp_basename = "{{cookiecutter.package_name}}_doc"
 
 # -- Options for LaTeX output ------------------------------------------------
 
