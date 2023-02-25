@@ -43,7 +43,7 @@ Your new python package will have the following:
 - Reproducible tests with `pytest` and `tox`
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
-- Version management with `bumpversion`
+- Version management with `bump2version`
 - Documentation build with `sphinx`
 - Testing of code quality with `flake8` in `tox`
 - Testing of documentation coverage with `docstr-coverage` in `tox`
