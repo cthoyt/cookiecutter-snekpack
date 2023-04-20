@@ -41,6 +41,7 @@ Your new python package will have the following:
 - Standard `src/` layout
 - Declarative setup with `setup.cfg` and `pyproject.toml`
 - Reproducible tests with `pytest` and `tox`
+- Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon) and `tox`
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
 - Version management with `bump2version`
