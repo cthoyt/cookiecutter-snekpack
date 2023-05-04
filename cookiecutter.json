@@ -6,5 +6,5 @@
     "author_email": "",
     "github_organization_name": "",
     "github_repository_name": "",
-    "command_line_interface": true
+    "command_line_interface": [true,false]
 }
