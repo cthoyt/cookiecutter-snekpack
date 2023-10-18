@@ -51,7 +51,7 @@ The {{cookiecutter.package_name}} command line tool is automatically installed. 
 be used from the shell with the `--help` flag to show all subcommands:
 
 ```shell
-$ {{cookiecutter.package_name}} --help
+{{cookiecutter.package_name}} --help
 ```
 
 > TODO show the most useful thing the CLI does! The CLI will have documentation auto-generated
@@ -64,14 +64,14 @@ The most recent release can be installed from
 [PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
 
 ```shell
-$ pip install {{cookiecutter.package_name}}
+pip install {{cookiecutter.package_name}}
 ```
 -->
 
 The most recent code and data can be installed directly from GitHub with:
 
-```bash
-$ pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+```shell
+pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
 ```
 
 ## 👐 Contributing
@@ -128,9 +128,9 @@ The final section of the README is for if you want to get involved by making a c
 To install in development mode, use the following:
 
 ```bash
-$ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
-$ cd {{cookiecutter.github_repository_name}}
-$ pip install -e .
+git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+cd {{cookiecutter.github_repository_name}}
+pip install -e .
 ```
 
 ### 🥼 Testing
@@ -139,7 +139,7 @@ After cloning the repository and installing `tox` with `pip install tox`, the un
 run reproducibly with:
 
 ```shell
-$ tox
+tox
 ```
 
 Additionally, these tests are automatically re-run with each commit in a [GitHub Action](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions?query=workflow%3ATests).
@@ -149,10 +149,10 @@ Additionally, these tests are automatically re-run with each commit in a [GitHub
 The documentation can be built locally using the following:
 
 ```shell
-$ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
-$ cd {{cookiecutter.github_repository_name}}
-$ tox -e docs
-$ open docs/build/html/index.html
+git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+cd {{cookiecutter.github_repository_name}}
+tox -e docs
+open docs/build/html/index.html
 ``` 
 
 The documentation automatically installs the package as well as the `docs`
@@ -167,7 +167,7 @@ After installing the package in development mode and installing
 in `tox.ini`. Run the following from the shell:
 
 ```shell
-$ tox -e finish
+tox -e finish
 ```
 
 This script does the following:
