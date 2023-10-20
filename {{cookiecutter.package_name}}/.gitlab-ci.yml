@@ -1,0 +1,64 @@
+stages:
+  - lint
+  - docs
+  - test
+
+manifest:
+  stage: lint
+  script:
+    - pip install tox
+    - tox -e manifest
+
+flake8:
+  stage: lint
+  script:
+    - pip install tox
+    - tox -e flake8
+
+pyroma:
+  stage: lint
+  script:
+    - pip install tox
+    - tox -e pyroma
+
+mypy:
+  stage: lint
+  script:
+    - pip install tox
+    - tox -e mypy
+
+doc8:
+  stage: docs
+  script:
+    - pip install tox
+    - tox -e doc8
+
+docstrs:
+  stage: docs
+  script:
+    - pip install tox
+    - tox -e docstr-coverage
+
+docs:
+  stage: docs
+  script:
+    - pip install tox
+    - tox -e docs
+
+tests:
+  stage: test
+  script:
+    - pip install tox
+    - tox -e py
+
+doctests:
+  stage: test
+  script:
+    - pip install tox
+    - tox -e doctests
+
+treon:
+  stage: test
+  script:
+    - pip install tox
+    - tox -e treon

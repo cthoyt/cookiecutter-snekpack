@@ -14,3 +14,6 @@ if __name__ == "__main__":
         PACKAGE.joinpath("cli.py").unlink()
         PACKAGE.joinpath("__main__.py").unlink()
         DOCS.joinpath("cli.rst").unlink()
+
+    if "{{ cookiecutter.gitlab|lower }}" == "false":
+        PROJECT_DIRECTORY.joinpath(".gitlab-ci.yml").unlink()
