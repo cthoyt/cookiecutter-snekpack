@@ -160,7 +160,7 @@ extra specified in the [`setup.cfg`](setup.cfg). `sphinx` plugins
 like `texext` can be added there. Additionally, they need to be added to the
 `extensions` list in [`docs/source/conf.py`](docs/source/conf.py).
 
-The documentation can be deployed to [ReadTheDocs](https://readthedocs.io>) using 
+The documentation can be deployed to [ReadTheDocs](https://readthedocs.io) using 
 [this guide](https://docs.readthedocs.io/en/stable/intro/import-guide.html).
 The [`.readthedocs.yml`](.readthedocs.yml) YAML file contains all the configuration you'll need.
 You can also set up continuous integration on GitHub to check not only that
