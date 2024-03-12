@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.11", "3.8" ]
+        python-version: [ "3.12", "3.8" ]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.11", "3.8" ]
+        python-version: [ "3.12", "3.8" ]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
@@ -45,7 +45,7 @@ jobs:
           python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
       - name: Install dependencies
         run: |
-          pip install tox
+          pip install tox tox-uv
           sudo apt-get install graphviz
       - name: Check RST conformity with doc8
         run: tox run -e doc8
@@ -59,7 +59,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        python-version: [ "3.11", "3.8" ]
+        python-version: [ "3.12", "3.8" ]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
@@ -67,7 +67,7 @@ jobs:
         with:
           python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
       - name: Install dependencies
-        run: pip install tox
+        run: pip install tox tox-uv
       - name: Test with pytest and generate coverage file
         run:
           tox run -e py
