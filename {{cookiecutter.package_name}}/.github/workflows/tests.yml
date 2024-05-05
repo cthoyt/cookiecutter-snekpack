@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install graphviz
-          pip install tox
+          pip install tox tox-uv
       - name: Check manifest
         run: tox run -e manifest
       - name: Check code quality with flake8

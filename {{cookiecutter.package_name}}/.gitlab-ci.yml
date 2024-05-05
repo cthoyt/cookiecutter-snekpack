@@ -6,59 +6,59 @@ stages:
 manifest:
   stage: lint
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e manifest
 
 flake8:
   stage: lint
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e flake8
 
 pyroma:
   stage: lint
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e pyroma
 
 mypy:
   stage: lint
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e mypy
 
 doc8:
   stage: docs
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e doc8
 
 docstrs:
   stage: docs
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e docstr-coverage
 
 docs:
   stage: docs
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e docs
 
 tests:
   stage: test
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e py
 
 doctests:
   stage: test
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e doctests
 
 treon:
   stage: test
   script:
-    - pip install tox
+    - pip install tox tox-uv
     - tox -e treon
