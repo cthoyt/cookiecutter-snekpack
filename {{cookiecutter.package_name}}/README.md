@@ -126,8 +126,8 @@ pip install -e .
 
 ### 🥼 Testing
 
-After cloning the repository and installing `tox` with `pip install tox`, the unit tests in the `tests/` folder can be
-run reproducibly with:
+After cloning the repository and installing `tox` and `tox-uv` with `pip install tox tox-uv`,
+the unit tests in the `tests/` folder can be run reproducibly with:
 
 ```shell
 tox
@@ -161,8 +161,8 @@ but also that [ReadTheDocs can build it too](https://docs.readthedocs.io/en/stab
 
 ### 📦 Making a Release
 
-After installing the package in development mode and installing
-`tox` with `pip install tox`, the commands for making a new release are contained within the `finish` environment
+After installing the package in development mode and installing `tox` and `tox-uv` with `pip install tox tox-uv`,
+the commands for making a new release are contained within the `finish` environment
 in `tox.ini`. Run the following from the shell:
 
 ```shell
