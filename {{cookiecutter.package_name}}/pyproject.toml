@@ -13,3 +13,35 @@ multi_line_output = 3
 line_length = 100
 include_trailing_comma = true
 reverse_relative = true
+
+[tool.ruff]
+line-length = 100
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+# See https://docs.astral.sh/ruff/rules
+extend-select = [
+    "F", # pyflakes
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "C90", # mccabe
+    "I", # isort
+    "UP", # pyupgrade
+    "D", # pydocstyle
+    "B", # bugbear
+    "S", # bandit
+    "T20", # print
+    "N", # pep8 naming
+    "ERA", # eradicate commented out code
+    "NPY", # numpy checks
+    "RUF", # ruff rules
+]
+ignore = [
+    "D105", # Missing docstring in magic method
+    "S404",
+    "S603",
+    "E203", # Black conflicts with the following
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
