@@ -1,28 +1,28 @@
 stages:
-  - lint
+  - qa
   - docs
   - test
 
 manifest:
-  stage: lint
+  stage: qa
   script:
     - pip install tox tox-uv
     - tox -e manifest
 
-flake8:
-  stage: lint
+lint:
+  stage: qa
   script:
     - pip install tox tox-uv
-    - tox -e flake8
+    - tox -e lint
 
 pyroma:
-  stage: lint
+  stage: qa
   script:
     - pip install tox tox-uv
     - tox -e pyroma
 
 mypy:
-  stage: lint
+  stage: qa
   script:
     - pip install tox tox-uv
     - tox -e mypy
