@@ -39,14 +39,13 @@ This project encourages the use of optional static typing. It
 uses [`mypy`](http://mypy-lang.org/) as a type checker. You can check if
 your code passes `mypy` with `tox -e mypy`.
 
-This project uses [`ruff`](https://github.com/psf/black) to automatically
+This project uses [`ruff`](https://docs.astral.sh/ruff/) to automatically
 enforce a consistent code style. You can apply `ruff format` and other pre-configured
 formatters with `tox -e format`.
 
 This project uses [`ruff`](https://docs.astral.sh/ruff/) and several plugins for
 additional checks of documentation style, security issues, good variable
-nomenclature, and more (
-see [`tox.ini`](tox.ini) for a list of Ruff plugins). You can check if your
+nomenclature, and more (see `pyproject.toml` for a list of Ruff plugins). You can check if your
 code passes `ruff check` with `tox -e lint`.
 
 Each of these checks are run on each commit using GitHub Actions as a continuous
