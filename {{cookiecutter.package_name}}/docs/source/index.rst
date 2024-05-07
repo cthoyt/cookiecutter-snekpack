@@ -14,7 +14,7 @@ It comes with the following:
 - A vanity CLI via python entrypoints
 - Version management with `bumpversion`
 - Documentation build with `sphinx`
-- Testing of code quality with `flake8` in `tox`
+- Testing of code quality with `ruff` in `tox`
 - Testing of documentation coverage with `docstr-coverage` in `tox`
 - Testing of documentation format and build in `tox`
 - Testing of package metadata completeness with `pyroma` in `tox`
