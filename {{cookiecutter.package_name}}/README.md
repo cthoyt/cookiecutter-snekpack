@@ -124,6 +124,20 @@ cd {{cookiecutter.github_repository_name}}
 pip install -e .
 ```
 
+### Updating Package Boilerplate
+
+This project uses `cruft` to keep boilerplate (i.e., configuration, contribution guidelines, documentation
+configuration)
+up-to-date with the upstream cookiecutter package. Update with the following:
+
+```shell
+pip install cruft
+cruft update
+```
+
+More info on Cruft's update command is
+available [here](https://github.com/cruft/cruft?tab=readme-ov-file#updating-a-project).
+
 ### 🥼 Testing
 
 After cloning the repository and installing `tox` and `tox-uv` with `pip install tox tox-uv`,

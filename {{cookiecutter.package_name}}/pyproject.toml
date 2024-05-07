@@ -3,6 +3,12 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta:__legacy__"
 
+[tool.cruft]
+skip = [
+    "**/__init__.py",
+    "tests/*"
+]
+
 [tool.black]
 line-length = 100
 target-version = ["py38", "py39", "py310", "py311"]
