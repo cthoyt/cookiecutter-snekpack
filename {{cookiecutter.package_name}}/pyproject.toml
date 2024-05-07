@@ -48,6 +48,9 @@ ignore = [
     "S603",
     "E203", # Black conflicts with the following
 ]
+extend-exclude = [
+    "docs/source/conf.py",
+]
 
 [tool.ruff.lint.pydocstyle]
 convention = "pep257"
