@@ -68,7 +68,8 @@ pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{c
 ## 👐 Contributing
 
 Contributions, whether filing an issue, making a pull request, or forking, are appreciated. See
-[CONTRIBUTING.md](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/.github/CONTRIBUTING.md) for more information on getting involved.
+[CONTRIBUTING.md](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/.github/CONTRIBUTING.md)
+for more information on getting involved.
 
 ## 👋 Attribution
 
@@ -87,7 +88,7 @@ Citation goes here!
 
 This project has been supported by the following organizations (in alphabetical order):
 
-- [Harvard Program in Therapeutic Science - Laboratory of Systems Pharmacology](https://hits.harvard.edu/the-program/laboratory-of-systems-pharmacology/)
+- [Biopragmatics Lab](https://biopragmatics.github.io)
 
 -->
 
@@ -96,9 +97,9 @@ This project has been supported by the following organizations (in alphabetical 
 
 This project has been supported by the following grants:
 
-| Funding Body                                             | Program                                                                                                                       | Grant           |
-|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| DARPA                                                    | [Automating Scientific Knowledge Extraction (ASKE)](https://www.darpa.mil/program/automating-scientific-knowledge-extraction) | HR00111990009   |
+| Funding Body  | Program                                                      | Grant Number |
+|---------------|--------------------------------------------------------------|--------------|
+| Funder        | [Grant Name (GRANT-ACRONYM)](https://example.com/grant-link) | ABCXYZ       |
 -->
 
 ### 🍪 Cookiecutter
@@ -166,7 +167,7 @@ extra specified in the [`setup.cfg`](setup.cfg). `sphinx` plugins
 like `texext` can be added there. Additionally, they need to be added to the
 `extensions` list in [`docs/source/conf.py`](docs/source/conf.py).
 
-The documentation can be deployed to [ReadTheDocs](https://readthedocs.io) using 
+The documentation can be deployed to [ReadTheDocs](https://readthedocs.io) using
 [this guide](https://docs.readthedocs.io/en/stable/intro/import-guide.html).
 The [`.readthedocs.yml`](.readthedocs.yml) YAML file contains all the configuration you'll need.
 You can also set up continuous integration on GitHub to check not only that
@@ -185,8 +186,9 @@ tox -e finish
 
 This script does the following:
 
-1. Uses [Bump2Version](https://github.com/c4urself/bump2version) to switch the version number in the `setup.cfg`, `CITATION.cff`,
-   `src/{{cookiecutter.package_name}}/version.py`, and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
+1. Uses [Bump2Version](https://github.com/c4urself/bump2version) to switch the version number in
+   the `setup.cfg`, `CITATION.cff`, `src/{{cookiecutter.package_name}}/version.py`,
+   and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel using [`build`](https://github.com/pypa/build)
 3. Uploads to PyPI using [`twine`](https://github.com/pypa/twine). Be sure to have a `.pypirc` file
    configured to avoid the need for manual input at this step
