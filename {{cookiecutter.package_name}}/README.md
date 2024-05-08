@@ -174,6 +174,15 @@ You can also set up continuous integration on GitHub to check not only that
 Sphinx can build the documentation in an isolated environment (i.e., with ``tox -e docs-test``)
 but also that [ReadTheDocs can build it too](https://docs.readthedocs.io/en/stable/pull-requests.html).
 
+#### Configuring ReadTheDocs
+
+1. Log in to ReadTheDocs with your GitHub account to install the integration
+   at https://readthedocs.org/accounts/login/?next=/dashboard/
+2. Import your project by navigating to https://readthedocs.org/dashboard/import then clicking the plus icon next to
+   your repository
+3. You can rename the repository on the next screen using a more stylized name (i.e., with spaces and capital letters)
+4. Click next, and you're good to go!
+
 ### 📦 Making a Release
 
 #### Configuring Zenodo
@@ -259,7 +268,8 @@ This script does the following:
    to https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/releases/new
    to draft a new release
 2. Click the "Choose a Tag" dropdown and select the tag corresponding to the release you just made
-3. Click the "Generate Release Notes" button to get a quick outline of recent changes. Modify the title and description as you see fit
+3. Click the "Generate Release Notes" button to get a quick outline of recent changes. Modify the title and description
+   as you see fit
 4. Click the big green "Publish Release" button
 
 This will trigger Zenodo to assign a DOI to your release as well.
