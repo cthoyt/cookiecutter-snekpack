@@ -9,6 +9,40 @@ skip = [
     "tests/*"
 ]
 
+[tool.mypy]
+plugins = [
+    "pydantic.mypy",
+]
+
+[tool.doc8]
+max-line-length = 120
+
+# Coverage, see https://coverage.readthedocs.io/en/latest/config.html
+[tool.coverage.run]
+branch = true
+source = "{{cookiecutter.package_name}}"
+omit = [
+    "tests/*",
+    "docs/*",
+]
+
+[tool.coverage.paths]
+source = [
+    "src/{{cookiecutter.package_name}}",
+    ".tox/*/lib/python*/site-packages/{{cookiecutter.package_name}}",
+]
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == \"__main__\":",
+    "if TYPE_CHECKING:",
+    "def __str__",
+    "def __repr__",
+]
+
 [tool.black]
 line-length = 100
 target-version = ["py38", "py39", "py310", "py311"]
