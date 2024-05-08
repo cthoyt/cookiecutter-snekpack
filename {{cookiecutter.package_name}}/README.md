@@ -176,6 +176,64 @@ but also that [ReadTheDocs can build it too](https://docs.readthedocs.io/en/stab
 
 ### 📦 Making a Release
 
+#### Configuring Zenodo
+
+[Zenodo](https://zenodo.org) is a long-term archival system that assigns a DOI to each release of your package.
+
+1. Log in to Zenodo via GitHub with this link: https://zenodo.org/oauth/login/github/?next=%2F. This brings you to a
+   page that lists all of your organizations and asks you to approve installing the Zenodo app on GitHub. Click "grant"
+   next to any organizations you want to enable the integration for, then click the big green "approve" button. This
+   step only needs to be done once.
+2. Navigate to https://zenodo.org/account/settings/github/, which lists all of your GitHub repositories (both in your
+   username and any organizations you enabled). Click the on/off toggle for any relevant repositories. When you make
+   a new repository, you'll have to come back to this
+
+After these steps, you're ready to go! After you make "release" on GitHub (steps for this are below), you can navigate
+to https://zenodo.org/account/settings/github/repository/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}
+to see the DOI for the release and link to the Zenodo record for it.
+
+#### Registering with the Python Package Index (PyPI)
+
+You only have to do the following steps once.
+
+1. Register for an account on the [Python Package Index (PyPI)](https://pypi.org/account/register)
+2. Navigate to https://pypi.org/manage/account and make sure you have verified your email address. A verification email
+   might not have been sent by default, so you might have to click the "options" dropdown next to your address to get to
+   the "re-send verification email" button
+3. 2-Factor authentication is required for PyPI since the end of 2023 (see
+   this [blog post from PyPI](https://blog.pypi.org/posts/2023-05-25-securing-pypi-with-2fa/)). This means
+   you have to first issue account recovery codes, then set up 2-factor authentication
+4. Issue an API token from https://pypi.org/manage/account/token
+
+#### Configuring your machine's connection to PyPI
+
+You have to do the following steps once per machine. Create a file in your home directory called
+`.pypirc` and include the following:
+
+```ini
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = <the API token you just got>
+
+# This block is optional in case you want to be able to make test releases to the Test PyPI server
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = <an API token from test PyPI>
+```
+
+Note that since PyPI is requiring token-based authentication, we use `__token__` as the user, verbatim.
+If you already have a `.pypirc` file with a `[distutils]` section, just make sure that there is an `index-servers`
+key and that `pypi` is in its associated list. More information on configuring the `.pypirc` file can
+be found [here](https://packaging.python.org/en/latest/specifications/pypirc).
+
+#### Uploading to PyPI
+
 After installing the package in development mode and installing `tox` and `tox-uv` with `pip install tox tox-uv`,
 the commands for making a new release are contained within the `finish` environment
 in `tox.ini`. Run the following from the shell:
@@ -190,10 +248,20 @@ This script does the following:
    the `setup.cfg`, `CITATION.cff`, `src/{{cookiecutter.package_name}}/version.py`,
    and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel using [`build`](https://github.com/pypa/build)
-3. Uploads to PyPI using [`twine`](https://github.com/pypa/twine). Be sure to have a `.pypirc` file
-   configured to avoid the need for manual input at this step
+3. Uploads to PyPI using [`twine`](https://github.com/pypa/twine).
 4. Push to GitHub. You'll need to make a release going with the commit where the version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump the version by minor, you can
    use `tox -e bumpversion -- minor` after.
+
+#### Releasing on GitHub
+
+1. Navigate
+   to https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/releases/new
+   to draft a new release
+2. Click the "Choose a Tag" dropdown and select the tag corresponding to the release you just made
+3. Click the "Generate Release Notes" button to get a quick outline of recent changes. Modify the title and description as you see fit
+4. Click the big green "Publish Release" button
+
+This will trigger Zenodo to assign a DOI to your release as well.
 
 </details>
