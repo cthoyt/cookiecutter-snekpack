@@ -48,9 +48,11 @@ ignore = [
     "S603",
     "E203", # Black conflicts with the following
 ]
-extend-exclude = [
-    "docs/source/conf.py",
-]
+
+# See https://docs.astral.sh/ruff/settings/#per-file-ignores
+[tool.ruff.lint.per-file-ignores]
+# Ignore commented out code in Sphinx configuration file
+"docs/source/conf.py" = ["ERA001"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "pep257"
