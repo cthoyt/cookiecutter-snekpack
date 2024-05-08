@@ -15,21 +15,23 @@ later, but that will cause problems--the code will get executed twice:
 .. seealso:: https://click.palletsprojects.com/en/8.1.x/setuptools/#setuptools-integration
 """
 
-import logging
-
 import click
 
 __all__ = [
     "main",
 ]
 
-logger = logging.getLogger(__name__)
 
-
-@click.group()
-@click.version_option()
-def main():
+@click.command()
+@click.option("--name", required=True, help="The name of the person to say hello to")
+def main(name):
     """CLI for {{cookiecutter.package_name}}."""
+    # import inside the CLI to make running the --help command faster
+    from .api import hello
+
+    hello(name)
+
+# If you want to have a multi-command CLI, see https://click.palletsprojects.com/en/latest/commands/
 
 
 if __name__ == "__main__":
