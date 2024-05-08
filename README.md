@@ -5,7 +5,8 @@ A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Py
 This template is different from [@audreyfeldroy](https://github.com/audreyfeldroy)'s
 [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) because it uses the source
 layout and has lots of code quality assurance checks built in. If you're looking for something similar but not quite
-like this, try her package or see her [list of alternatives](https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#similar-cookiecutter-templates).
+like this, try her package or see
+her [list of alternatives](https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#similar-cookiecutter-templates).
 
 I've written several blog posts outlining all the ideas that made it into this template:
 
@@ -53,7 +54,8 @@ Your new python package will have the following:
 - Testing of MANIFEST correctness with `check-manifest` in `tox`
 - Testing of optional static typing with `mypy` in `tox`
 - A `py.typed` file so other packages can use your type hints
-- Automated running of tests on each push with [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+- Automated running of tests on each push
+  with [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 - Configuration for [ReadTheDocs](https://readthedocs.org/)
 - A good base `.gitignore` generated from [gitignore.io](https://gitignore.io).
 - A pre-formatted README with badges
@@ -62,6 +64,11 @@ Your new python package will have the following:
 - Automatic tool for releasing to PyPI with `tox -e finish`
 - A copy of the [Contributor Covenant](https://www.contributor-covenant.org/) as a basic code of conduct
 
-## ⚖️ License
+## Attribution
+
+Feel free to adapt this template to your needs, but please credit me in your README and link back
+to https://github.com/cthoyt/cookiecutter-snekpack.
+
+### ⚖️ License
 
 This cookiecutter package is licensed under the MIT License.
