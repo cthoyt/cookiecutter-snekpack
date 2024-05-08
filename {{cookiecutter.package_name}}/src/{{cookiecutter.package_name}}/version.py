@@ -21,8 +21,8 @@ def get_git_hash() -> str:
     """Get the :mod:`{{cookiecutter.package_name}}` git hash."""
     with open(os.devnull, "w") as devnull:
         try:
-            ret = check_output(  # noqa: S603,S607
-                ["git", "rev-parse", "HEAD"],
+            ret = check_output(  # noqa: S603
+                ["git", "rev-parse", "HEAD"],  # noqa: S607
                 cwd=os.path.dirname(__file__),
                 stderr=devnull,
             )
