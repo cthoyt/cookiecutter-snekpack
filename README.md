@@ -53,7 +53,7 @@ Your new python package will have the following:
 - Testing of MANIFEST correctness with `check-manifest` in `tox`
 - Testing of optional static typing with `mypy` in `tox`
 - A `py.typed` file so other packages can use your type hints
-- Automated running of tests on each push with GitHub Actions
+- Automated running of tests on each push with [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 - Configuration for [ReadTheDocs](https://readthedocs.org/)
 - A good base `.gitignore` generated from [gitignore.io](https://gitignore.io).
 - A pre-formatted README with badges
