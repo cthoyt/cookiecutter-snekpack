@@ -163,7 +163,7 @@ open docs/build/html/index.html
 ``` 
 
 The documentation automatically installs the package as well as the `docs`
-extra specified in the [`setup.cfg`](setup.cfg). `sphinx` plugins
+extra specified in the [`pyproject.toml`](pyproject.toml). `sphinx` plugins
 like `texext` can be added there. Additionally, they need to be added to the
 `extensions` list in [`docs/source/conf.py`](docs/source/conf.py).
 
@@ -254,7 +254,7 @@ tox -e finish
 This script does the following:
 
 1. Uses [Bump2Version](https://github.com/c4urself/bump2version) to switch the version number in
-   the `setup.cfg`, `CITATION.cff`, `src/{{cookiecutter.package_name}}/version.py`,
+   the `pyproject.toml`, `CITATION.cff`, `src/{{cookiecutter.package_name}}/version.py`,
    and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel using [`build`](https://github.com/pypa/build)
 3. Uploads to PyPI using [`twine`](https://github.com/pypa/twine).

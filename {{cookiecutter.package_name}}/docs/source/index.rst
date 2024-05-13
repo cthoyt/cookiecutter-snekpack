@@ -8,7 +8,7 @@ package using `cookiecutter-snekpack <https://github.com/cthoyt/cookiecutter-sne
 It comes with the following:
 
 - Standard `src/` layout
-- Declarative setup with `setup.cfg` and `pyproject.toml`
+- Declarative setup with `pyproject.toml` (following [PEP 621](https://peps.python.org/pep-0621/))
 - Reproducible tests with `pytest` and `tox`{% if cookiecutter.command_line_interface|lower != "false" %}
 - A command line interface with `click`{% endif %}
 - A vanity CLI via python entrypoints
