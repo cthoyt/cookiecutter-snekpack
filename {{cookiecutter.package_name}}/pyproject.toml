@@ -9,10 +9,10 @@ version = "0.0.1-dev"
 description = "{{cookiecutter.short_description}}"
 readme = "README.md"
 authors = [
-    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.email}}" }
+    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" }
 ]
 maintainers = [
-    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.email}}" }
+    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" }
 ]
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#classifiers
