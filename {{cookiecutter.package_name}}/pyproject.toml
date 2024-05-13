@@ -93,7 +93,7 @@ where = ["src"]  # list of folders that contain the packages (["."] by default)
 
 {% if cookiecutter.command_line_interface|lower != "false" %}
 [project.scripts]
-{{ cookiecutter.package_name } } = "{{cookiecutter.package_name}}.cli:app"
+{{ cookiecutter.package_name }} = "{{cookiecutter.package_name}}.cli:app"
 {% endif %}
 
 [tool.cruft]
