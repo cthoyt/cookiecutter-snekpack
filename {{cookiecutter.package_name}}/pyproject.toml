@@ -44,7 +44,7 @@ keywords = [
 # License Information. This can be any valid SPDX identifiers that can be resolved
 # with URLs like https://spdx.org/licenses/MIT
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license
-license = { text = "MIT", file = "LICENSE" }
+license = { file = "LICENSE" }
 
 requires-python = ">=3.8"
 dependencies = [
@@ -81,10 +81,10 @@ Repository = "https://github.com/{{cookiecutter.__gh_slug}}.git"
 Documentation = "https://{{cookiecutter.package_name}}.readthedocs.io"
 
 [tool.setuptools]
-packages = ":find"
 package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
+# this implicitly sets `packages = ":find"`
 where = ["src"]  # list of folders that contain the packages (["."] by default)
 
 # See https://setuptools.pypa.io/en/latest/userguide/datafiles.html
@@ -93,7 +93,7 @@ where = ["src"]  # list of folders that contain the packages (["."] by default)
 
 {% if cookiecutter.command_line_interface|lower != "false" %}
 [project.scripts]
-{{ cookiecutter.package_name }} = "{{cookiecutter.package_name}}.cli:app"
+{{ cookiecutter.package_name }} = "{{cookiecutter.package_name}}.cli:main"
 {% endif %}
 
 [tool.cruft]
