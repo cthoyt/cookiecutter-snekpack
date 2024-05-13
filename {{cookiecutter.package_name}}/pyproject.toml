@@ -59,7 +59,7 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
     "pytest",
-    "coverge",
+    "coverage",
 ]
 docs = [
     "sphinx",
@@ -115,7 +115,9 @@ max-line-length = 120
 # Coverage, see https://coverage.readthedocs.io/en/latest/config.html
 [tool.coverage.run]
 branch = true
-source = "{{cookiecutter.package_name}}"
+source = [
+    "{{cookiecutter.package_name}}",
+]
 omit = [
     "tests/*",
     "docs/*",
