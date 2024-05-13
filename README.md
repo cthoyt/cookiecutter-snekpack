@@ -40,7 +40,7 @@ I've written several blog posts outlining all the ideas that made it into this t
 Your new python package will have the following:
 
 - Standard `src/` layout
-- Declarative setup with `setup.cfg` and `pyproject.toml`
+- Declarative setup with `pyproject.toml` (following [PEP 621](https://peps.python.org/pep-0621/))
 - Reproducible tests with `pytest` and `tox`
 - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon) and `tox`
 - A command line interface with `click`

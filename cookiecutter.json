@@ -1,11 +1,18 @@
 {
-    "package_name": "",
-    "package_name_stylized": "",
-    "short_description": "",
-    "author_name": "",
-    "author_email": "",
-    "github_organization_name": "",
-    "github_repository_name": "",
-    "command_line_interface": [true,false],
-    "gitlab": [false, true]
+  "package_name": "",
+  "package_name_stylized": "",
+  "short_description": "",
+  "author_name": "",
+  "author_email": "",
+  "github_organization_name": "",
+  "github_repository_name": "",
+  "command_line_interface": [
+    true,
+    false
+  ],
+  "gitlab": [
+    false,
+    true
+  ],
+  "__gh_slug": "{{ cookiecutter.github_organization_name }}/{{ cookiecutter.github_repository_name }}"
 }
