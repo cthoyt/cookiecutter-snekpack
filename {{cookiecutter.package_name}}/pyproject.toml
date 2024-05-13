@@ -50,10 +50,10 @@ requires-python = ">=3.8"
 dependencies = [
     "more_itertools", # missing from itertools in stdlib
     "tqdm", # progress bars
-    {% if cookiecutter.command_line_interface|lower ! = "false" % }
+    {% if cookiecutter.command_line_interface|lower != "false" %}
     "click",
     "more_click",
-    {% endif % }
+    {% endif %}
 ]
 
 [project.optional-dependencies]
@@ -64,7 +64,7 @@ tests = [
 docs = [
     "sphinx",
     "sphinx-rtd-theme",
-    {% if cookiecutter.command_line_interface|lower ! = "false" % }"sphinx-click", {% endif % }
+    {% if cookiecutter.command_line_interface|lower != "false" %}"sphinx-click", {% endif %}
     "sphinx_automodapi",
     # Include if your project uses Pydantic:
     # "autodoc_pydantic",
@@ -91,10 +91,10 @@ where = ["src"]  # list of folders that contain the packages (["."] by default)
 [tool.setuptools.package-data]
 "*" = ["*.*"]
 
-{% if cookiecutter.command_line_interface|lower ! = "false" % }
+{% if cookiecutter.command_line_interface|lower != "false" %}
 [project.scripts]
 {{ cookiecutter.package_name } } = "{{cookiecutter.package_name}}.cli:app"
-{ % endif % }
+{% endif %}
 
 [tool.cruft]
 skip = [
