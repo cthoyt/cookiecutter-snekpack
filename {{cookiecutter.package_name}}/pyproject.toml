@@ -175,8 +175,6 @@ extend-select = [
 ]
 ignore = [
     "D105", # Missing docstring in magic method
-    "S404",
-    "S603",
     "E203", # Black conflicts with the following
 ]
 
