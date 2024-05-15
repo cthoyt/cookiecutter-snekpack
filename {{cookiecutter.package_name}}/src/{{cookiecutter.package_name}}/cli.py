@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Command line interface for :mod:`{{cookiecutter.package_name}}`.
 
 Why does this file exist, and why not put this in ``__main__``?

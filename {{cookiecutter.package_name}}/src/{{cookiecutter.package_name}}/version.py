@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Version information for :mod:`{{cookiecutter.package_name}}`.
 
 Run with ``python -m {{cookiecutter.package_name}}.version``

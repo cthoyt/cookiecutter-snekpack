@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """This is a placeholder for putting the main code for your module.
 
 If you don't want to keep ``api.py``, check the following places:
