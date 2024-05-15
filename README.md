@@ -35,6 +35,9 @@ I've written several blog posts outlining all the ideas that made it into this t
 4. If you're working under version control, copy the repository into your folder tracked under git, commit
    the files, and push to your remote.
 
+You can see an example repository of what happens right after you run these commands at
+https://github.com/cthoyt/snekpack-demo.
+
 ## 💪 Features
 
 Your new python package will have the following:
