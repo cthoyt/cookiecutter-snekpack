@@ -159,7 +159,6 @@ profile = "black"
 multi_line_output = 3
 line_length = 100
 include_trailing_comma = true
-reverse_relative = true
 
 [tool.ruff]
 line-length = 100
@@ -195,3 +194,13 @@ ignore = [
 
 [tool.ruff.lint.pydocstyle]
 convention = "pep257"
+
+[tool.ruff.lint.isort]
+relative-imports-order = "closest-to-furthest"
+known-third-party = [
+    "tqdm",
+]
+known-first-party = [
+    "{{cookiecutter.package_name}}",
+    "tests",
+]
