@@ -12,12 +12,12 @@ import nox
 
 from pathlib import Path
 
-nox.options.default_venv_backend = 'uv'
+nox.options.default_venv_backend = "uv"
 
 HERE = Path(__file__).parent.resolve()
 
 
-@nox.session()
+@nox.session(tags=["tests"])
 def tests(session: nox.Session):
     """Run unit and integration tests."""
     session.install(".[tests]")
@@ -26,14 +26,14 @@ def tests(session: nox.Session):
     session.run("coverage", "xml")
 
 
-@nox.session()
+@nox.session(tags=["pre"])
 def coverage_clean(session: nox.Session):
     """Remove testing coverage artifacts."""
     session.install("coverage")
     session.run("coverage", "erase")
 
 
-@nox.session()
+@nox.session(tags=["tests"])
 def doctests(session: nox.Session):
     """Test that documentation examples run properly."""
     session.install(".")
@@ -41,7 +41,7 @@ def doctests(session: nox.Session):
     session.run("xdoctest", "-m", "src/")
 
 
-@nox.session()
+@nox.session(tags=["tests"])
 def treon(session: nox.Session):
     """Test that notebooks can run to completion."""
     if not HERE.joinpath("notebooks").is_dir():
@@ -51,7 +51,7 @@ def treon(session: nox.Session):
     session.install("treon", "notebooks/")
 
 
-@nox.session()
+@nox.session(tags=["formatting"])
 def format(session: nox.Session):
     """Format the code in a deterministic way using ruff."""
     session.install("ruff")
@@ -59,7 +59,7 @@ def format(session: nox.Session):
     session.run("ruff", "format")
 
 
-@nox.session()
+@nox.session(tags=["linting"])
 def lint(session: nox.Session):
     """Check code quality using ruff and other tools."""
     session.install("ruff", "darglint2")
@@ -78,14 +78,14 @@ def lint(session: nox.Session):
     )
 
 
-@nox.session()
+@nox.session(tags=["linting"])
 def doc8(session: nox.Session):
     """Run the doc8 tool to check the style of the RST files in the project docs."""
     session.install("sphinx", "doc8")
     session.run("doc8", "docs/source/")
 
 
-@nox.session()
+@nox.session(tags=["docs"])
 def docs_test(session: nox.Session):
     """Test building the documentation in an isolated environment."""
     session.install(".[docs]")
@@ -109,42 +109,48 @@ def docs_test(session: nox.Session):
     )
 
 
-@nox.session()
+@nox.session(tags=["linting"])
 def docstr_coverage(session: nox.Session):
     """Run the docstr-coverage tool to check documentation coverage."""
     session.install("docstr-coverage")
     session.run("docstr-coverage", "src/", "tests/", "--skip-private", "--skip-magic")
 
 
-@nox.session()
+@nox.session(tags=["linting"])
 def manifest(session: nox.Session):
     """Check that the MANIFEST.in is written properly and give feedback on how to fix it."""
     session.install("check-manifest")
     session.run("check-manifest")
 
 
-@nox.session()
+@nox.session(tags=["linting"])
 def mypy(session: nox.Session):
     """Run the mypy tool to check static typing on the project."""
     session.install("mypy", "pydantic")
-    session.run("mypy", "--install-types", "--non-interactive", "--ignore-missing-imports", "src/")
+    session.run(
+        "mypy",
+        "--install-types",
+        "--non-interactive",
+        "--ignore-missing-imports",
+        "src/",
+    )
 
 
-@nox.session()
+@nox.session(tags=["linting"])
 def pyroma(session: nox.Session):
     """Run the pyroma tool to check the package friendliness of the project."""
     session.install("pygments", "pyroma")
     session.run("pyroma", "--min=10", ".")
 
 
-@nox.session()
+@nox.session(tags=["dev"])
 def build(session: nox.Session):
     """Build the package."""
     session.install("wheel", "build[uv]", "setuptools")
     session.run("python", "-m", "build", "--sdist", "--wheel", "--no-isolation")
 
 
-@nox.session()
+@nox.session(tags=["dev"])
 def release(session: nox.Session):
     """Build a pip package."""
     build(session)
@@ -152,12 +158,40 @@ def release(session: nox.Session):
     session.run("python", "-m", "twine", "upload", "--skip-existing", "dist/*")
 
 
-@nox.session()
+@nox.session(tags=["dev"])
 def finish(session: nox.Session):
     """Finish this version increase the version number and upload to PyPI."""
     session.install("bump2version")
     session.run("python", "-m", "bumpversion", "release", "--tag")
     release(session)
+    session.run("git", "push", "--tags", external=True)
+    session.run("python", "-m", "bumpversion", "patch")
+    session.run("git", "push", external=True)
+
+
+@nox.session(tags=["dev"])
+def test_release(session: nox.Session):
+    """Build a pip package."""
+    build(session)
+    session.install("twine>=1.5.0")
+    session.run(
+        "python",
+        "-m",
+        "twine",
+        "upload",
+        "--skip-existing",
+        "--repository",
+        "testpypi",
+        "dist/*",
+    )
+
+
+@nox.session(tags=["dev"])
+def test_finish(session: nox.Session):
+    """Finish this version increase the version number and upload to PyPI."""
+    session.install("bump2version")
+    session.run("python", "-m", "bumpversion", "release", "--tag")
+    test_release(session)
     session.run("git", "push", "--tags", external=True)
     session.run("python", "-m", "bumpversion", "patch")
     session.run("git", "push", external=True)
