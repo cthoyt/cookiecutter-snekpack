@@ -44,18 +44,19 @@ Your new python package will have the following:
 
 - Standard `src/` layout
 - Declarative setup with `pyproject.toml` (following [PEP 621](https://peps.python.org/pep-0621/))
-- Reproducible tests with `pytest` and `tox`
-- Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon) and `tox`
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
-- Version management with `bump2version`
-- Documentation build with `sphinx`
-- Testing of code quality with `ruff` in `tox`
-- Testing of documentation coverage with `docstr-coverage` in `tox`
-- Testing of documentation format and build in `tox`
-- Testing of package metadata completeness with `pyroma` in `tox`
-- Testing of MANIFEST correctness with `check-manifest` in `tox`
-- Testing of optional static typing with `mypy` in `tox`
+- Reproducible workflows in either `tox` or `nox`
+  - Reproducible tests with `pytest` and 
+  - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon)
+  - Version management with `bump2version`
+  - Documentation build with `sphinx`
+  - Testing of code quality with `ruff`
+  - Testing of documentation coverage with `docstr-coverage`
+  - Testing of documentation format and build
+  - Testing of package metadata completeness with `pyroma`
+  - Testing of MANIFEST correctness with `check-manifest`
+  - Testing of optional static typing with `mypy`
 - A `py.typed` file so other packages can use your type hints
 - Automated running of tests on each push
   with [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
@@ -64,7 +65,7 @@ Your new python package will have the following:
 - A pre-formatted README with badges
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
-- Automatic tool for releasing to PyPI with `tox -e finish`
+- Automatic tool for releasing to PyPI with `tox -e finish`  (or `nox -s finish`)
 - A copy of the [Contributor Covenant](https://www.contributor-covenant.org/) as a basic code of conduct
 
 ## Attribution

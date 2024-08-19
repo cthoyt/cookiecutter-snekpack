@@ -24,7 +24,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Framework :: Pytest",
+    {% if cookiecutter.runner == "tox"}
     "Framework :: tox",
+    {% else %}
+    # note that there is currently no Trove classifier for Nox
+    {% endif %}
     "Framework :: Sphinx",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3.9",

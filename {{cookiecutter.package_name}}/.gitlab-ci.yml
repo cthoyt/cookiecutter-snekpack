@@ -6,59 +6,59 @@ stages:
 manifest:
   stage: qa
   script:
-    - pip install tox tox-uv
-    - tox -e manifest
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} manifest
 
 lint:
   stage: qa
   script:
-    - pip install tox tox-uv
-    - tox -e lint
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} lint
 
 pyroma:
   stage: qa
   script:
-    - pip install tox tox-uv
-    - tox -e pyroma
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} pyroma
 
 mypy:
   stage: qa
   script:
-    - pip install tox tox-uv
-    - tox -e mypy
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} mypy
 
 doc8:
   stage: docs
   script:
-    - pip install tox tox-uv
-    - tox -e doc8
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} doc8
 
 docstrs:
   stage: docs
   script:
-    - pip install tox tox-uv
-    - tox -e docstr-coverage
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} docstr-coverage
 
 docs:
   stage: docs
   script:
-    - pip install tox tox-uv
-    - tox -e docs
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} docs
 
 tests:
   stage: test
   script:
-    - pip install tox tox-uv
-    - tox -e py
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
 
 doctests:
   stage: test
   script:
-    - pip install tox tox-uv
-    - tox -e doctests
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} doctests
 
 treon:
   stage: test
   script:
-    - pip install tox tox-uv
-    - tox -e treon
+    - pip install {{ cookiecutter.__runner_pip }}
+    - install {{ cookiecutter.__runner }} treon
