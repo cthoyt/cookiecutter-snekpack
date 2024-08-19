@@ -12,7 +12,8 @@ import nox
 
 from pathlib import Path
 
-nox.options.default_venv_backend = "uv"
+# see https://nox.thea.codes/en/stable/usage.html#changing-the-sessions-default-backend
+nox.options.default_venv_backend = "uv|virtualenv"
 
 HERE = Path(__file__).parent.resolve()
 
