@@ -2,6 +2,10 @@
 
 Note that Nox support is experimental for the cookiecutter-snekpack
 and is not up to feature parity as the Tox configuration.
+
+H/T to Moritz Wolter and using
+https://github.com/v0lta/PyTorch-Wavelet-Toolbox/blob/main/noxfile.py
+as a guide for preparing this.
 """
 
 import nox
@@ -131,3 +135,29 @@ def pyroma(session: nox.Session):
     """Run the pyroma tool to check the package friendliness of the project."""
     session.install("pygments", "pyroma")
     session.run("pyroma", "--min=10", ".")
+
+
+@nox.session()
+def build(session: nox.Session):
+    """Build the package."""
+    session.install("wheel", "build[uv]", "setuptools")
+    session.run("python", "-m", "build", "--sdist", "--wheel", "--no-isolation")
+
+
+@nox.session()
+def release(session: nox.Session):
+    """Build a pip package."""
+    build(session)
+    session.install("twine>=1.5.0")
+    session.run("python", "-m", "twine", "upload", "--skip-existing", "dist/*")
+
+
+@nox.session()
+def finish(session: nox.Session):
+    """Finish this version increase the version number and upload to PyPI."""
+    session.install("bump2version")
+    session.run("python", "-m", "bumpversion", "release", "--tag")
+    release(session)
+    session.run("git", "push", "--tags", external=True)
+    session.run("python", "-m", "bumpversion", "patch")
+    session.run("git", "push", external=True)
