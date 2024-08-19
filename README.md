@@ -47,15 +47,16 @@ Your new python package will have the following:
 - Reproducible workflows configured with `tox`
   - Reproducible tests with `pytest` and 
   - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon)
-  - Version management with `bump2version`
   - Documentation build with `sphinx`
   - Testing of code quality with `ruff`
   - Testing of documentation coverage with `docstr-coverage`
-  - Testing of documentation format and build
+  - Testing of documentation format
   - Testing of package metadata completeness with `pyroma`
   - Testing of MANIFEST correctness with `check-manifest`
   - Testing of optional static typing with `mypy`
-  - Automatic tool for releasing to PyPI
+  - Version management with `bump2version`
+  - Building with `build[uv]`
+  - Releasing to PyPI with `twine`
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
 - A `py.typed` file so other packages can use your type hints
