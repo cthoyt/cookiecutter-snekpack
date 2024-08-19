@@ -85,7 +85,7 @@ def doc8(session: nox.Session):
     session.run("doc8", "docs/source/")
 
 
-@nox.session(tags=["docs"])
+@nox.session(name="docs-test", tags=["docs"])
 def docs_test(session: nox.Session):
     """Test building the documentation in an isolated environment."""
     session.install(".[docs]")

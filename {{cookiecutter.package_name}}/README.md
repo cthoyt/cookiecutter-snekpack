@@ -50,7 +50,7 @@ be used from the shell with the `--help` flag to show all subcommands:
 {% endif %}
 ## 🚀 Installation
 
-<!-- Uncomment this section after your first ``tox -e finish``
+<!-- Uncomment this section after your first ``{{ cookiecutter.__runner }} finish``
 The most recent release can be installed from
 [PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
 
@@ -141,11 +141,11 @@ available [here](https://github.com/cruft/cruft?tab=readme-ov-file#updating-a-pr
 
 ### 🥼 Testing
 
-After cloning the repository and installing `tox` and `tox-uv` with `pip install tox tox-uv`,
+After cloning the repository and installing `{{ cookiecutter.runner }}` with `pip install {{ cookiecutter.__runner_pip }}`, 
 the unit tests in the `tests/` folder can be run reproducibly with:
 
 ```shell
-tox
+{{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
 ```
 
 Additionally, these tests are automatically re-run with each commit in a
@@ -158,7 +158,7 @@ The documentation can be built locally using the following:
 ```shell
 git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
 cd {{cookiecutter.github_repository_name}}
-tox -e docs
+{{ cookiecutter.__runner }} docs
 open docs/build/html/index.html
 ``` 
 
@@ -171,7 +171,7 @@ The documentation can be deployed to [ReadTheDocs](https://readthedocs.io) using
 [this guide](https://docs.readthedocs.io/en/stable/intro/import-guide.html).
 The [`.readthedocs.yml`](.readthedocs.yml) YAML file contains all the configuration you'll need.
 You can also set up continuous integration on GitHub to check not only that
-Sphinx can build the documentation in an isolated environment (i.e., with ``tox -e docs-test``)
+Sphinx can build the documentation in an isolated environment (i.e., with ``{{ cookiecutter.__runner }} docs-test``)
 but also that [ReadTheDocs can build it too](https://docs.readthedocs.io/en/stable/pull-requests.html).
 
 #### Configuring ReadTheDocs
@@ -243,12 +243,12 @@ be found [here](https://packaging.python.org/en/latest/specifications/pypirc).
 
 #### Uploading to PyPI
 
-After installing the package in development mode and installing `tox` and `tox-uv` with `pip install tox tox-uv`,
-the commands for making a new release are contained within the `finish` environment
-in `tox.ini`. Run the following from the shell:
+After installing the package in development mode and installing
+`{{ cookiecutter.runner }}` with `pip install {{ cookiecutter.__runner_pip }}`,
+run the following from the shell:
 
 ```shell
-tox -e finish
+{{ cookiecutter.__runner }} finish
 ```
 
 This script does the following:
