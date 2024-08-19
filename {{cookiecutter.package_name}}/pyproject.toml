@@ -137,7 +137,7 @@ omit = [
 [tool.coverage.paths]
 source = [
     "src/{{cookiecutter.package_name}}",
-    ".tox/*/lib/python*/site-packages/{{cookiecutter.package_name}}",
+    ".{{ cookiecutter.runner }}/*/lib/python*/site-packages/{{cookiecutter.package_name}}",
 ]
 
 [tool.coverage.report]

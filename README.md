@@ -44,9 +44,7 @@ Your new python package will have the following:
 
 - Standard `src/` layout
 - Declarative setup with `pyproject.toml` (following [PEP 621](https://peps.python.org/pep-0621/))
-- A command line interface with `click`
-- A vanity CLI via python entrypoints
-- Reproducible workflows in either `tox` or `nox`
+- Reproducible workflows configured with `tox`
   - Reproducible tests with `pytest` and 
   - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon)
   - Version management with `bump2version`
@@ -57,6 +55,9 @@ Your new python package will have the following:
   - Testing of package metadata completeness with `pyroma`
   - Testing of MANIFEST correctness with `check-manifest`
   - Testing of optional static typing with `mypy`
+  - Automatic tool for releasing to PyPI
+- A command line interface with `click`
+- A vanity CLI via python entrypoints
 - A `py.typed` file so other packages can use your type hints
 - Automated running of tests on each push
   with [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
@@ -65,7 +66,6 @@ Your new python package will have the following:
 - A pre-formatted README with badges
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
-- Automatic tool for releasing to PyPI with `tox -e finish`  (or `nox -s finish`)
 - A copy of the [Contributor Covenant](https://www.contributor-covenant.org/) as a basic code of conduct
 
 ## Attribution
