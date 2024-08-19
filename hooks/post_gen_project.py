@@ -17,3 +17,8 @@ if __name__ == "__main__":
 
     if "{{ cookiecutter.gitlab|lower }}" == "false":
         PROJECT_DIRECTORY.joinpath(".gitlab-ci.yml").unlink()
+
+    if "{{ cookiecutter.runner }}" == "tox":
+        PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
+    else:
+        PROJECT_DIRECTORY.joinpath("tox.ini").unlink()

@@ -14,5 +14,12 @@
     false,
     true
   ],
+  "runner": [
+    "tox",
+    "nox"
+  ],
+  "__runner": "{% if cookiecutter['runner'] == 'tox' %}tox -e{% else %}nox -s{% endif %}",
+  "__runner_pip": "{% if cookiecutter['runner'] == 'tox' %}tox tox-uv{% else %}nox[uv]{% endif %}",
+  "__runner_tests": "{% if cookiecutter['runner'] == 'tox' %}py{% else %}tests{% endif %}",
   "__gh_slug": "{{ cookiecutter.github_organization_name }}/{{ cookiecutter.github_repository_name }}"
 }

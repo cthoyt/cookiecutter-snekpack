@@ -9,7 +9,7 @@ It comes with the following:
 
 - Standard ``src/`` layout
 - Declarative setup with `pyproject.toml` (following `PEP 621 <https://peps.python.org/pep-0621/>`_)
-- Reproducible workflows configured with ``tox``
+- Reproducible workflows configured with ``{{ cookiecutter.runner }}``
   - Reproducible tests with ``pytest``{% if cookiecutter.command_line_interface|lower != "false" %}
   - A command line interface with ``click``{% endif %}
   - Reproducible notebooks with `treon <https://github.com/reviewNB/treon>`_

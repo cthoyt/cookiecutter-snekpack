@@ -44,7 +44,7 @@ Your new python package will have the following:
 
 - Standard `src/` layout
 - Declarative setup with `pyproject.toml` (following [PEP 621](https://peps.python.org/pep-0621/))
-- Reproducible workflows configured with `tox`
+- Reproducible workflows configured with `tox` or `nox`
   - Reproducible tests with `pytest` and 
   - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon)
   - Documentation build with `sphinx`
