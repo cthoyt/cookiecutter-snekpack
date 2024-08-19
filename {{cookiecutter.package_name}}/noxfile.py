@@ -144,14 +144,14 @@ def pyroma(session: nox.Session):
     session.run("pyroma", "--min=10", ".")
 
 
-@nox.session(tags=["dev"])
+@nox.session(tags=["dev"], default=False)
 def build(session: nox.Session):
     """Build the package."""
     session.install("wheel", "build[uv]", "setuptools")
     session.run("python", "-m", "build", "--sdist", "--wheel", "--no-isolation")
 
 
-@nox.session(tags=["dev"])
+@nox.session(tags=["dev"], default=False)
 def release(session: nox.Session):
     """Build a pip package."""
     build(session)
@@ -159,7 +159,7 @@ def release(session: nox.Session):
     session.run("python", "-m", "twine", "upload", "--skip-existing", "dist/*")
 
 
-@nox.session(tags=["dev"])
+@nox.session(tags=["dev"], default=False)
 def finish(session: nox.Session):
     """Finish this version increase the version number and upload to PyPI."""
     session.install("bump2version")
@@ -170,7 +170,7 @@ def finish(session: nox.Session):
     session.run("git", "push", external=True)
 
 
-@nox.session(tags=["dev"])
+@nox.session(tags=["dev"], default=False)
 def test_release(session: nox.Session):
     """Build a pip package."""
     build(session)
@@ -187,7 +187,7 @@ def test_release(session: nox.Session):
     )
 
 
-@nox.session(tags=["dev"])
+@nox.session(tags=["dev"], default=False)
 def test_finish(session: nox.Session):
     """Finish this version increase the version number and upload to PyPI."""
     session.install("bump2version")
