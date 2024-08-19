@@ -7,58 +7,58 @@ manifest:
   stage: qa
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} manifest
+    - {{ cookiecutter.__runner }} manifest
 
 lint:
   stage: qa
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} lint
+    - {{ cookiecutter.__runner }} lint
 
 pyroma:
   stage: qa
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} pyroma
+    - {{ cookiecutter.__runner }} pyroma
 
 mypy:
   stage: qa
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} mypy
+    - {{ cookiecutter.__runner }} mypy
 
 doc8:
   stage: docs
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} doc8
+    - {{ cookiecutter.__runner }} doc8
 
 docstrs:
   stage: docs
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} docstr-coverage
+    - {{ cookiecutter.__runner }} docstr-coverage
 
 docs:
   stage: docs
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} docs
+    - {{ cookiecutter.__runner }} docs
 
 tests:
   stage: test
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
+    - {{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
 
 doctests:
   stage: test
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} doctests
+    - {{ cookiecutter.__runner }} doctests
 
 treon:
   stage: test
   script:
     - pip install {{ cookiecutter.__runner_pip }}
-    - install {{ cookiecutter.__runner }} treon
+    - {{ cookiecutter.__runner }} treon
