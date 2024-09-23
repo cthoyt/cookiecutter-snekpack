@@ -33,7 +33,7 @@ acceptance and merge into the main branch. This has several benefits:
 ### Code Style
 
 This project uses `{{ cookiecutter.runner }}` for running code quality checks. Start by installing
-it` with `pip install {{ cookiecutter.__runner_pip }}`.
+it with `pip install {{ cookiecutter.__runner_pip }}`.
 
 This project encourages the use of optional static typing. It
 uses [`mypy`](http://mypy-lang.org/) as a type checker. You can check if
