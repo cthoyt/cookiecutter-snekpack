@@ -65,10 +65,8 @@ tests = [
     "coverage",
 ]
 docs = [
-    # waiting on https://github.com/readthedocs/sphinx_rtd_theme/issues/1582
-    # to make sphinx 8 possible
-    "sphinx<8",
-    "sphinx-rtd-theme",
+    "sphinx>=8",
+    "sphinx-rtd-theme>=3.0",
     {% if cookiecutter.command_line_interface|lower != "false" %}"sphinx-click", {% endif %}
     "sphinx_automodapi",
     # Include if your project uses Pydantic:
