@@ -13,7 +13,7 @@ It comes with the following:
   - Reproducible tests with ``pytest``{% if cookiecutter.command_line_interface|lower != "false" %}
   - A command line interface with ``click``{% endif %}
   - Reproducible notebooks with `treon <https://github.com/reviewNB/treon>`_
-  - Documentation build with ``sphinx``
+  - Documentation build with ``sphinx`` 8.0 and ``sphinx-rtd-theme`` 3.0
   - Testing of code quality with ``ruff``
   - Testing of documentation coverage with ``docstr-coverage``
   - Testing of documentation format
