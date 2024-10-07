@@ -256,7 +256,8 @@ This script does the following:
 1. Uses [Bump2Version](https://github.com/c4urself/bump2version) to switch the version number in
    the `pyproject.toml`, `CITATION.cff`, `src/{{cookiecutter.package_name}}/version.py`,
    and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
-2. Packages the code in both a tar archive and a wheel using [`build`](https://github.com/pypa/build)
+2. Packages the code in both a tar archive and a wheel using
+   [`uv build`](https://docs.astral.sh/uv/guides/publish/#building-your-package)
 3. Uploads to PyPI using [`twine`](https://github.com/pypa/twine).
 4. Push to GitHub. You'll need to make a release going with the commit where the version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump the version by minor, you can
