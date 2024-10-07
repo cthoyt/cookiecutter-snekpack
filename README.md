@@ -55,7 +55,7 @@ Your new python package will have the following:
   - Testing of MANIFEST correctness with `check-manifest`
   - Testing of optional static typing with `mypy`
   - Version management with `bump2version`
-  - Building with `build[uv]`
+  - Building with `uv build`
   - Releasing to PyPI with `twine`
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
