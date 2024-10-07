@@ -149,21 +149,6 @@ exclude_lines = [
     "def __repr__",
 ]
 
-[tool.black]
-line-length = 100
-target-version = [
-    "py39",
-    "py310",
-    "py311",
-    "py312",
-]
-
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-line_length = 100
-include_trailing_comma = true
-
 [tool.ruff]
 line-length = 100
 extend-include = ["*.ipynb"]
