@@ -34,7 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.12", "3.9" ]
+        # We only test documentation on the latest version
+        # sphinx 8.0 / sphinx-rtd-theme 3.0 discontinued Python 3.9 support
+        # a year early, which prompted re-thinking about this.
+        python-version: [ "3.12" ]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
