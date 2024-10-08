@@ -163,6 +163,7 @@ extend-select = [
     "I", # isort
     "UP", # pyupgrade
     "D", # pydocstyle
+    "DOC", # pydoclint
     "B", # bugbear
     "S", # bandit
     "T20", # print
