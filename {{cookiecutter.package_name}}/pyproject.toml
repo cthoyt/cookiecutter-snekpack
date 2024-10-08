@@ -199,3 +199,7 @@ known-first-party = [
     "{{cookiecutter.package_name}}",
     "tests",
 ]
+
+[tool.ruff.format]
+# see https://docs.astral.sh/ruff/settings/#format_docstring-code-format
+docstring-code-format = true
