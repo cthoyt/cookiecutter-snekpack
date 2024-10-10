@@ -27,7 +27,7 @@ jobs:
           cache-dependency-glob: "pyproject.toml"
       - name: "Run command"
         run: |
-          uvx -p "${{ matrix.python-version }}" {{ cookiecutter.__runner_uv }} ${{ "{{" }} matrix.tox-command {{ "}}" }}
+          uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} ${{ "{{" }} matrix.tox-command {{ "}}" }}
 
   docs:
     name: Documentation
@@ -49,11 +49,11 @@ jobs:
         run: |
           sudo apt-get install graphviz
       - name: Check RST conformity with doc8
-        run: uvx -p "${{ matrix.python-version }}" {{ cookiecutter.__runner_uv }} doc8
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} doc8
       - name: Check docstring coverage
-        run: uvx -p "${{ matrix.python-version }}" {{ cookiecutter.__runner_uv }} docstr-coverage
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docstr-coverage
       - name: Check documentation build with Sphinx
-        run: uvx -p "${{ matrix.python-version }}" {{ cookiecutter.__runner_uv }} docs-test
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docs-test
   tests:
     name: Tests
     runs-on: ${{ "{{" }} matrix.os {{ "}}" }}
@@ -70,7 +70,7 @@ jobs:
           cache-dependency-glob: "pyproject.toml"
       - name: Test with pytest and generate coverage file
         run:
-          uvx -p "${{ matrix.python-version }}" {{ cookiecutter.__runner_uv }} {{ cookiecutter.__runner_tests }}
+          uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} {{ cookiecutter.__runner_tests }}
       - name: Upload coverage report to codecov
         uses: codecov/codecov-action@v1
         if: success()
