@@ -47,14 +47,14 @@ Your new python package will have the following:
 - Reproducible workflows configured with `tox` or `nox`
   - Reproducible tests with `pytest` and 
   - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon)
-  - Documentation build with `sphinx` 8.0 and `sphinx-rtd-theme` 3.0
+  - Documentation build with `sphinx` 8.0+ and `sphinx-rtd-theme` 3.0+
   - Testing of code quality with `ruff`
   - Testing of documentation coverage with `docstr-coverage`
   - Testing of documentation format
   - Testing of package metadata completeness with `pyroma`
   - Testing of MANIFEST correctness with `check-manifest`
   - Testing of optional static typing with `mypy`
-  - Version management with `bump2version`
+  - Version management with [`bump-my-version`](https://github.com/callowayproject/bump-my-version)
   - Building with `uv build`
   - Releasing to PyPI with `twine`
 - A command line interface with `click`

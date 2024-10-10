@@ -162,11 +162,11 @@ def release(session: nox.Session) -> None:
 @nox.session(tags=["dev"], default=False)
 def finish(session: nox.Session) -> None:
     """Finish this version increase the version number and upload to PyPI."""
-    session.install("bump2version")
-    session.run("python", "-m", "bumpversion", "release", "--tag")
+    session.install("bump-my-version")
+    session.run("bump-my-version", "bump", "release", "--tag")
     release(session)
     session.run("git", "push", "--tags", external=True)
-    session.run("python", "-m", "bumpversion", "patch")
+    session.run("python", "-m", "bump-my-version", "bump", "patch")
     session.run("git", "push", external=True)
 
 
@@ -190,9 +190,9 @@ def test_release(session: nox.Session) -> None:
 @nox.session(tags=["dev"], default=False)
 def test_finish(session: nox.Session) -> None:
     """Finish this version increase the version number and upload to PyPI."""
-    session.install("bump2version")
-    session.run("python", "-m", "bumpversion", "release", "--tag")
+    session.install("bump-my-version")
+    session.run("bump-my-version", "bump", "release", "--tag")
     test_release(session)
     session.run("git", "push", "--tags", external=True)
-    session.run("python", "-m", "bumpversion", "patch")
+    session.run("bump-my-version", "bump", "patch")
     session.run("git", "push", external=True)

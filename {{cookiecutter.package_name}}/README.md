@@ -253,7 +253,7 @@ run the following from the shell:
 
 This script does the following:
 
-1. Uses [Bump2Version](https://github.com/c4urself/bump2version) to switch the version number in
+1. Uses [bump-my-version](https://github.com/callowayproject/bump-my-version) to switch the version number in
    the `pyproject.toml`, `CITATION.cff`, `src/{{cookiecutter.package_name}}/version.py`,
    and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel using

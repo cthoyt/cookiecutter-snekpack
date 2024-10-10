@@ -20,7 +20,7 @@ It comes with the following:
   - Testing of package metadata completeness with ``pyroma``
   - Testing of MANIFEST correctness with ``check-manifest``
   - Testing of optional static typing with ``mypy``
-  - Version management with ``bump2version``
+  - Version management with `bump-my-version <https://github.com/callowayproject/bump-my-version>`_
   - Building with ``uv build``
   - Releasing to PyPI with ``twine``
 - A command line interface with ``click``
