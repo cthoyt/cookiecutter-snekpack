@@ -19,7 +19,7 @@ jobs:
         python-version: [ "3.12", "3.9" ]
         tox-command: ["manifest", "lint", "pyroma", "mypy"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: "Install uv"
         uses: "astral-sh/setup-uv@v3"
         with:
@@ -39,7 +39,7 @@ jobs:
         # a year early, which prompted re-thinking about this.
         python-version: [ "3.12" ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: "Install uv"
         uses: "astral-sh/setup-uv@v3"
         with:
@@ -62,7 +62,7 @@ jobs:
         os: [ ubuntu-latest ]
         python-version: [ "3.12", "3.9" ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: "Install uv"
         uses: "astral-sh/setup-uv@v3"
         with:
@@ -72,7 +72,7 @@ jobs:
         run:
           uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} {{ cookiecutter.__runner_tests }}
       - name: Upload coverage report to codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v4
         if: success()
         with:
           file: coverage.xml
