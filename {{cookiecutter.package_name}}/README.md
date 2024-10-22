@@ -171,7 +171,7 @@ The documentation can be deployed to [ReadTheDocs](https://readthedocs.io) using
 [this guide](https://docs.readthedocs.io/en/stable/intro/import-guide.html).
 The [`.readthedocs.yml`](.readthedocs.yml) YAML file contains all the configuration you'll need.
 You can also set up continuous integration on GitHub to check not only that
-Sphinx can build the documentation in an isolated environment (i.e., with ``{{ cookiecutter.__runner }} docs-test``)
+Sphinx can build the documentation in an isolated environment (i.e., with `{{ cookiecutter.__runner }} docs-test`)
 but also that [ReadTheDocs can build it too](https://docs.readthedocs.io/en/stable/pull-requests.html).
 
 #### Configuring ReadTheDocs
