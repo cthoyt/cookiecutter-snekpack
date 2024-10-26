@@ -59,10 +59,21 @@ dependencies = [
     {% endif %}
 ]
 
-[project.optional-dependencies]
+# see https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
+# [project.optional-dependencies]
+
+#
+[dependency-groups]
 tests = [
     "pytest",
     "coverage",
+]
+lint = [
+    "ruff",
+]
+typing = [
+    "mypy",
+    "pydantic",
 ]
 docs = [
     "sphinx>=8",
@@ -74,6 +85,22 @@ docs = [
     # To include LaTeX comments easily in your docs.
     # If you uncomment this, don't forget to do the same in docs/conf.py
     # texext
+]
+doc8 = [
+    {include-group = "docs"},
+    "doc8",
+]
+rstfmt = [
+    {include-group = "docs"},
+    "rstfmt"
+]
+doctests = [
+    "xdoctest",
+    "pygments",
+]
+pyroma = [
+    "pyroma",
+    "pygments",
 ]
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls
