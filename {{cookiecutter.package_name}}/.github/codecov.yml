@@ -1,0 +1,4 @@
+# see https://docs.codecov.com/v4.6/docs/codecov-yaml
+ignore:
+  - "src/{{ cookiecutter.package_name }}/__main__.py"
+  - "src/{{ cookiecutter.package_name }}/cli.py"
