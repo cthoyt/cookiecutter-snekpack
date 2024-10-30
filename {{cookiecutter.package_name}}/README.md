@@ -40,9 +40,9 @@
 {% if cookiecutter.command_line_interface|lower != "false" %}### Command Line Interface
 
 The {{cookiecutter.package_name}} command line tool is automatically installed. It can
-be used from the shell with the `--help` flag to show all subcommands:
+be used from the console with the `--help` flag to show all subcommands:
 
-```shell
+```console
 {{cookiecutter.package_name}} --help
 ```
 
@@ -55,15 +55,15 @@ be used from the shell with the `--help` flag to show all subcommands:
 The most recent release can be installed from
 [PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
 
-```shell
-pip install {{cookiecutter.package_name}}
+```console
+python3 -m pip install {{cookiecutter.package_name}}
 ```
 -->
 
 The most recent code and data can be installed directly from GitHub with:
 
-```shell
-pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+```console
+python3 -m pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
 ```
 
 ## 👐 Contributing
@@ -120,10 +120,10 @@ The final section of the README is for if you want to get involved by making a c
 
 To install in development mode, use the following:
 
-```bash
+```console
 git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
 cd {{cookiecutter.github_repository_name}}
-pip install -e .
+python3 -m pip install -e .
 ```
 
 ### Updating Package Boilerplate
@@ -132,8 +132,8 @@ This project uses `cruft` to keep boilerplate (i.e., configuration, contribution
 configuration)
 up-to-date with the upstream cookiecutter package. Update with the following:
 
-```shell
-pip install cruft
+```console
+python3 -m pip install cruft
 cruft update
 ```
 
@@ -142,10 +142,11 @@ available [here](https://github.com/cruft/cruft?tab=readme-ov-file#updating-a-pr
 
 ### 🥼 Testing
 
-After cloning the repository and installing `{{ cookiecutter.runner }}` with `pip install {{ cookiecutter.__runner_pip }}`, 
+After cloning the repository and installing `{{ cookiecutter.runner }}` with
+`python3 -m pip install {{ cookiecutter.__runner_pip }}`, 
 the unit tests in the `tests/` folder can be run reproducibly with:
 
-```shell
+```console
 {{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
 ```
 
@@ -156,7 +157,7 @@ Additionally, these tests are automatically re-run with each commit in a
 
 The documentation can be built locally using the following:
 
-```shell
+```console
 git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
 cd {{cookiecutter.github_repository_name}}
 {{ cookiecutter.__runner }} docs
@@ -245,10 +246,10 @@ be found [here](https://packaging.python.org/en/latest/specifications/pypirc).
 #### Uploading to PyPI
 
 After installing the package in development mode and installing
-`{{ cookiecutter.runner }}` with `pip install {{ cookiecutter.__runner_pip }}`,
-run the following from the shell:
+`{{ cookiecutter.runner }}` with `python3 -m pip install {{ cookiecutter.__runner_pip }}`,
+run the following from the console:
 
-```shell
+```console
 {{ cookiecutter.__runner }} finish
 ```
 
