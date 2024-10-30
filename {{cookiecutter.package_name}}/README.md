@@ -259,7 +259,8 @@ This script does the following:
    and [`docs/source/conf.py`](docs/source/conf.py) to not have the `-dev` suffix
 2. Packages the code in both a tar archive and a wheel using
    [`uv build`](https://docs.astral.sh/uv/guides/publish/#building-your-package)
-3. Uploads to PyPI using [`twine`](https://github.com/pypa/twine).
+3. Uploads to PyPI using [`twine upload`](https://github.com/pypa/twine).
+   This will be replaced soon with `uv publish` (see https://github.com/cthoyt/cookiecutter-snekpack/issues/29)
 4. Push to GitHub. You'll need to make a release going with the commit where the version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump the version by minor, you can
    use `tox -e bumpversion -- minor` after.
