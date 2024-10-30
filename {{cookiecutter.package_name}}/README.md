@@ -143,7 +143,7 @@ available [here](https://github.com/cruft/cruft?tab=readme-ov-file#updating-a-pr
 ### 🥼 Testing
 
 After cloning the repository and installing `{{ cookiecutter.runner }}` with
-`python3 -m pip install {{ cookiecutter.__runner_pip }}`, 
+`python3 -m pip install {{ cookiecutter.__runner_pip }}`,
 the unit tests in the `tests/` folder can be run reproducibly with:
 
 ```console
@@ -162,7 +162,7 @@ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{coo
 cd {{cookiecutter.github_repository_name}}
 {{ cookiecutter.__runner }} docs
 open docs/build/html/index.html
-``` 
+```
 
 The documentation automatically installs the package as well as the `docs`
 extra specified in the [`pyproject.toml`](pyproject.toml). `sphinx` plugins
