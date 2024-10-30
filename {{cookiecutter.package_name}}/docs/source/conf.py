@@ -36,7 +36,7 @@ parsed_version = re.match(
 version = parsed_version.expand(r"\g<major>.\g<minor>.\g<patch>")
 
 if parsed_version.group("release"):
-    tags.add("prerelease")
+    tags.add("prerelease")  # noqa:F821
 
 
 # See https://about.readthedocs.com/blog/2024/07/addons-by-default/
