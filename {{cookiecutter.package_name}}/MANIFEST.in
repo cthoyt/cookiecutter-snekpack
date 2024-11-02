@@ -8,4 +8,6 @@ prune docs
 global-exclude *.py[cod] __pycache__ *.so *.dylib .DS_Store *.gpickle .idea/**
 
 include README.md LICENSE
-exclude tox.ini .readthedocs.yml .cruft.json CITATION.cff docker-compose.yml Dockerfile noxfile.py
+exclude .readthedocs.yml .cruft.json docker-compose.yml Dockerfile
+exclude {% if cookiecutter['runner'] == 'tox' %}tox.ini{% else %}noxfile.py{% endif %}
+{%- if cookiecutter.citation_file|lower == "true" %}exclude CITATION.cff{% endif %}

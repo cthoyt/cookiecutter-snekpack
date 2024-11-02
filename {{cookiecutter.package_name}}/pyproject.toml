@@ -238,7 +238,9 @@ filename = "src/{{cookiecutter.package_name}}/version.py"
 search = "VERSION = \"{current_version}\""
 replace = "VERSION = \"{new_version}\""
 
+{% if cookiecutter.citation_file|lower == "true" %}
 [[tool.bumpversion.files]]
 filename = "CITATION.cff"
 search = "version: {current_version}"
 replace = "version: {new_version}"
+{% endif %}

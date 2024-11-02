@@ -18,6 +18,10 @@
     "tox",
     "nox"
   ],
+  "citation_file": [
+    false,
+    true
+  ],
   "__runner": "{% if cookiecutter['runner'] == 'tox' %}tox -e{% else %}nox -s{% endif %}",
   "__runner_uv": "{% if cookiecutter['runner'] == 'tox' %}--with tox-uv tox -e{% else %}nox -s{% endif %}",
   "__runner_pip": "{% if cookiecutter['runner'] == 'tox' %}tox tox-uv{% else %}nox[uv]{% endif %}",
