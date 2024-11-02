@@ -8,7 +8,7 @@
   {{cookiecutter.package_name_stylized}}
 </h1>
 
-<p align="center">
+<p align="center">{# note to future charlie - the </a> is on same line to avoid trailing whitespce #}
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions/workflows/tests.yml">
         <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions/workflows/tests.yml/badge.svg" /></a>
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
