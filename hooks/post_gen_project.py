@@ -22,3 +22,6 @@ if __name__ == "__main__":
         PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
     else:
         PROJECT_DIRECTORY.joinpath("tox.ini").unlink()
+
+    if "{{ cookiecutter.citation_file|lower }}" == "false":
+        PROJECT_DIRECTORY.joinpath("CITATION.cff").unlink()
