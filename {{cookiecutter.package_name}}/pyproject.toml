@@ -92,7 +92,7 @@ doc8 = [
 ]
 rstfmt = [
     {include-group = "docs"},
-    "rstfmt"
+    "rstfmt",
 ]
 doctests = [
     "xdoctest",
@@ -102,6 +102,21 @@ pyroma = [
     "pyroma",
     "pygments",
 ]
+bump = [
+    "bump-my-version",
+]
+build = [
+    "uv",
+    "setuptools",
+]
+release = [
+    {include-group = "build"},
+    "twine",
+]
+manifest = [
+    "check-manifest",
+]
+
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls
 [project.urls]
