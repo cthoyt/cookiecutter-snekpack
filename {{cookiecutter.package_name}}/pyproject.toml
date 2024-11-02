@@ -58,7 +58,8 @@ dependencies = [
     {% endif %}
 ]
 
-[project.optional-dependencies]
+# see https://peps.python.org/pep-0735/ and https://docs.astral.sh/uv/concepts/dependencies/#dependency-groups
+[dependency-groups]
 tests = [
     "pytest",
     "coverage",
@@ -74,6 +75,48 @@ docs = [
     # If you uncomment this, don't forget to do the same in docs/conf.py
     # texext
 ]
+lint = [
+    "ruff",
+]
+typing = [
+    "mypy",
+    "pydantic",
+]
+doc8 = [
+    { include-group = "docs" },
+    "doc8",
+]
+rstfmt = [
+    { include-group = "docs" },
+    "rstfmt",
+]
+doctests = [
+    "xdoctest",
+    "pygments",
+]
+pyroma = [
+    "pyroma",
+    "pygments",
+]
+bump = [
+    "bump-my-version",
+]
+build = [
+    "uv",
+    "setuptools",
+]
+release = [
+    { include-group = "build" },
+    "twine",
+]
+manifest = [
+    "check-manifest",
+]
+
+
+# see https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
+# [project.optional-dependencies]
+
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls
 [project.urls]
