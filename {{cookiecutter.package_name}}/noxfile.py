@@ -8,9 +8,9 @@ https://github.com/v0lta/PyTorch-Wavelet-Toolbox/blob/main/noxfile.py
 as a guide for preparing this.
 """
 
-import nox
-
 from pathlib import Path
+
+import nox
 
 # see https://nox.thea.codes/en/stable/usage.html#changing-the-sessions-default-backend
 nox.options.default_venv_backend = "uv|virtualenv"
@@ -147,16 +147,16 @@ def pyroma(session: nox.Session) -> None:
 @nox.session(tags=["dev"], default=False)
 def build(session: nox.Session) -> None:
     """Build the package."""
-    session.install("wheel", "build[uv]", "setuptools")
-    session.run("python", "-m", "build", "--sdist", "--wheel", "--no-isolation")
+    session.install("uv", "setuptools")
+    session.run("uv", "build", "--sdist", "--wheel", "--no-build-isolation")
 
 
 @nox.session(tags=["dev"], default=False)
 def release(session: nox.Session) -> None:
     """Build a pip package."""
     build(session)
-    session.install("twine>=1.5.0")
-    session.run("python", "-m", "twine", "upload", "--skip-existing", "dist/*")
+    session.install("keyring")
+    _uv_publish(session, "https://upload.pypi.org/legacy/")
 
 
 @nox.session(tags=["dev"], default=False)
@@ -174,16 +174,20 @@ def finish(session: nox.Session) -> None:
 def test_release(session: nox.Session) -> None:
     """Build a pip package."""
     build(session)
-    session.install("twine>=1.5.0")
+    session.install("keyring")
+    _uv_publish(session, "https://test.pypi.org/legacy/")
+
+
+def _uv_publish(session: nox.Session, publish_url: str) -> None:
     session.run(
-        "python",
-        "-m",
-        "twine",
-        "upload",
-        "--skip-existing",
-        "--repository",
-        "testpypi",
-        "dist/*",
+        "uv",
+        "publish",
+        "--username",
+        "__token__",
+        "--keyring-provider",
+        "subprocess",
+        "--publish-url",
+        publish_url,
     )
 
 
