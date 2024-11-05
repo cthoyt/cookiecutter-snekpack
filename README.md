@@ -55,8 +55,8 @@ Your new python package will have the following:
   - Testing of MANIFEST correctness with `check-manifest`
   - Testing of optional static typing with `mypy`
   - Version management with [`bump-my-version`](https://github.com/callowayproject/bump-my-version)
-  - Building with `uv build`
-  - Releasing to PyPI with `twine`
+  - Building with [`uv build`](https://docs.astral.sh/uv/guides/publish/#building-your-package)
+  - Releasing to PyPI with [`uv publish`](https://docs.astral.sh/uv/guides/publish/#publishing-your-package)
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
 - A `py.typed` file so other packages can use your type hints
