@@ -14,8 +14,6 @@ build:
 
 python:
   install:
-    - method: pip
-      path: .
-      # TODO resolve issue where docs should be a dependency group now
-      extra_requirements:
-        - docs
+    # partial override of build commands was added in https://github.com/readthedocs/readthedocs.org/pull/11710
+    # you can include extras with .[] notation
+    - pip install --dependency-groups=docs .
