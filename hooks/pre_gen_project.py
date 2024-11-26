@@ -23,7 +23,7 @@ if not PYTHON_PACKAGE_NAME_REGEX.match(python_package_name):
     # Exit to cancel project
     sys.exit(1)
 
-if not REPOSITORY_REGEX.match(python_package_name):
+if not REPOSITORY_REGEX.match(repository_name):
     print(
         f"ERROR: {repository_name} is not a good version control repository name. "
         f"Please do not use _ and use - instead."
