@@ -30,11 +30,14 @@ classifiers = [
     # note that there is currently no Trove classifier for Nox
     {% endif %}
     "Framework :: Sphinx",
+    "Natural Language :: English",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
     # TODO add your topics from the Trove controlled vocabulary (see https://pypi.org/classifiers)
 ]
 keywords = [
