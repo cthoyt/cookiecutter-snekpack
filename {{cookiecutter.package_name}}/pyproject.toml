@@ -59,6 +59,7 @@ dependencies = [
     "click",
     "more_click",
     {% endif %}
+    "typing-extensions",
 ]
 
 [project.optional-dependencies]
