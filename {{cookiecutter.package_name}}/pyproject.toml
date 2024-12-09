@@ -24,11 +24,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Framework :: Pytest",
-    {% if cookiecutter.runner == "tox" %}
+    {%- if cookiecutter.runner == "tox" %}
     "Framework :: tox",
-    {% else %}
+    {%- else %}
     # note that there is currently no Trove classifier for Nox
-    {% endif %}
+    {%- endif %}
     "Framework :: Sphinx",
     "Natural Language :: English",
     "Programming Language :: Python",
@@ -55,10 +55,10 @@ requires-python = ">=3.10"
 dependencies = [
     "more_itertools", # missing from itertools in stdlib
     "tqdm", # progress bars
-    {% if cookiecutter.command_line_interface|lower != "false" %}
+    {%- if cookiecutter.command_line_interface|lower != "false" %}
     "click",
     "more_click",
-    {% endif %}
+    {%- endif %}
     "typing-extensions",
 ]
 
@@ -70,7 +70,7 @@ tests = [
 docs = [
     "sphinx>=8",
     "sphinx-rtd-theme>=3.0",
-    {% if cookiecutter.command_line_interface|lower != "false" %}"sphinx-click", {% endif %}
+    {%- if cookiecutter.command_line_interface|lower != "false" %}"sphinx-click", {% endif %}
     "sphinx_automodapi",
     # Include if your project uses Pydantic:
     # "autodoc_pydantic",
