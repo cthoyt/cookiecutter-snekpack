@@ -80,11 +80,13 @@ docs = [
 ]
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls
+# and also https://packaging.python.org/en/latest/specifications/well-known-project-urls/
 [project.urls]
 "Bug Tracker" = "https://github.com/{{cookiecutter.__gh_slug}}/issues"
 Homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
 Repository = "https://github.com/{{cookiecutter.__gh_slug}}.git"
 Documentation = "https://{{cookiecutter.package_name}}.readthedocs.io"
+Funding = "https://github.com/sponsors/{{ cookiecutter.author_github }}"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
