@@ -105,7 +105,7 @@ where = ["src"]  # list of folders that contain the packages (["."] by default)
 [tool.setuptools.package-data]
 "*" = ["*.*"]
 
-{%- if cookiecutter.command_line_interface|lower != "false" %}
+{% if cookiecutter.command_line_interface|lower != "false" -%}
 [project.scripts]
 {{ cookiecutter.package_name }} = "{{cookiecutter.package_name}}.cli:main"
 {%- endif %}
