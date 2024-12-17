@@ -18,10 +18,17 @@ nox.options.default_venv_backend = "uv|virtualenv"
 HERE = Path(__file__).parent.resolve()
 
 
+def install(session: nox.Session, *args: str) -> None:
+    """Install command."""
+    # TODO this might need to get updated to use session.run
+    #  since the documentation says that it's deprecated
+    session.install(*args, env={"UV_PREVIEW": "1"})
+
+
 @nox.session(tags=["tests"])
 def tests(session: nox.Session) -> None:
     """Run unit and integration tests."""
-    session.install(".[tests]")
+    install(session, ".[tests]")
     session.run("coverage", "run", "-p", "-m", "pytest", "--durations=20", "tests")
     session.run("coverage", "combine")
     session.run("coverage", "xml")
@@ -37,7 +44,7 @@ def coverage_clean(session: nox.Session) -> None:
 @nox.session(tags=["tests"])
 def doctests(session: nox.Session) -> None:
     """Test that documentation examples run properly."""
-    session.install(".")
+    install(session, ".")
     session.install("xdoctest", "pygments")
     session.run("xdoctest", "-m", "src/")
 
@@ -47,7 +54,7 @@ def treon(session: nox.Session) -> None:
     """Test that notebooks can run to completion."""
     if not HERE.joinpath("notebooks").is_dir():
         return
-    session.install(".")
+    install(session, ".")
     session.install("treon")
     session.run("treon", "notebooks/")
 
@@ -89,7 +96,7 @@ def doc8(session: nox.Session) -> None:
 @nox.session(name="docs-test", tags=["docs"])
 def docs_test(session: nox.Session) -> None:
     """Test building the documentation in an isolated environment."""
-    session.install(".[docs]")
+    install(session, ".[docs]")
     session.chdir("docs")
 
     directory = Path(session.create_tmp())
@@ -118,13 +125,6 @@ def docstr_coverage(session: nox.Session) -> None:
 
 
 @nox.session(tags=["linting"])
-def manifest(session: nox.Session) -> None:
-    """Check that the MANIFEST.in is written properly and give feedback on how to fix it."""
-    session.install("check-manifest")
-    session.run("check-manifest")
-
-
-@nox.session(tags=["linting"])
 def mypy(session: nox.Session) -> None:
     """Run the mypy tool to check static typing on the project."""
     session.install("mypy", "pydantic")
@@ -147,8 +147,7 @@ def pyroma(session: nox.Session) -> None:
 @nox.session(tags=["dev"], default=False)
 def build(session: nox.Session) -> None:
     """Build the package."""
-    session.install("uv", "setuptools")
-    session.run("uv", "build", "--sdist", "--wheel", "--no-build-isolation")
+    session.run("uv", "--preview", "build", "--sdist", "--wheel", "--no-build-isolation")
 
 
 @nox.session(tags=["dev"], default=False)
