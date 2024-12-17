@@ -49,7 +49,7 @@ def treon(session: nox.Session) -> None:
         return
     session.install(".")
     session.install("treon")
-    session.install("treon", "notebooks/")
+    session.run("treon", "notebooks/")
 
 
 @nox.session(tags=["formatting"])
