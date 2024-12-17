@@ -118,13 +118,6 @@ def docstr_coverage(session: nox.Session) -> None:
 
 
 @nox.session(tags=["linting"])
-def manifest(session: nox.Session) -> None:
-    """Check that the MANIFEST.in is written properly and give feedback on how to fix it."""
-    session.install("check-manifest")
-    session.run("check-manifest")
-
-
-@nox.session(tags=["linting"])
 def mypy(session: nox.Session) -> None:
     """Run the mypy tool to check static typing on the project."""
     session.install("mypy", "pydantic")
