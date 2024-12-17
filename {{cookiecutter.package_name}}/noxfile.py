@@ -147,7 +147,6 @@ def pyroma(session: nox.Session) -> None:
 @nox.session(tags=["dev"], default=False)
 def build(session: nox.Session) -> None:
     """Build the package."""
-    session.install("uv")
     session.run("uv", "--preview", "build", "--sdist", "--wheel", "--no-build-isolation")
 
 
