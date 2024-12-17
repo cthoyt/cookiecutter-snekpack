@@ -21,7 +21,7 @@ HERE = Path(__file__).parent.resolve()
 def install(session: nox.Session, *args: str) -> None:
     """Install command."""
     # TODO this might need to get updated to use session.run
-    # since the documentation says that it's deprecated
+    #  since the documentation says that it's deprecated
     session.install(*args, env={"UV_PREVIEW": "1"})
 
 
