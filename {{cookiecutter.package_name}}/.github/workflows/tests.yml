@@ -84,6 +84,9 @@ jobs:
       - name: Test with pytest and generate coverage file
         run:
           uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} {{ cookiecutter.__runner_tests }}
+      - name: Run doctests
+        run:
+          uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} doctests
       - name: Upload coverage report to codecov
         uses: codecov/codecov-action@v4
         if: success()
