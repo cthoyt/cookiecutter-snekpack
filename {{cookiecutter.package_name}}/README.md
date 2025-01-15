@@ -47,7 +47,7 @@ The {{cookiecutter.package_name}} command line tool is automatically installed.
 It can be used from the console with the `--help` flag to show all subcommands:
 
 ```console
-{{cookiecutter.package_name}} --help
+$ {{cookiecutter.package_name}} --help
 ```
 
 > TODO show the most useful thing the CLI does! The CLI will have documentation
@@ -57,18 +57,33 @@ It can be used from the console with the `--help` flag to show all subcommands:
 
 <!-- Uncomment this section after your first ``{{ cookiecutter.__runner }} finish``
 The most recent release can be installed from
-[PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with:
+[PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with uv:
 
 ```console
-python3 -m pip install {{cookiecutter.package_name}}
+$ uv pip install {{cookiecutter.package_name}}
+```
+
+or with pip:
+
+```console
+$ python3 -m pip install {{cookiecutter.package_name}}
 ```
 -->
 
-The most recent code and data can be installed directly from GitHub with:
+The most recent code and data can be installed directly from GitHub with uv:
 
 ```console
-python3 -m pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+$ uv --preview pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
 ```
+
+or with pip:
+
+```console
+$ UV_PREVIEW=1 python3 -m pip install git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+```
+
+Note that this requires setting `UV_PREVIEW` mode enabled until the uv build
+backend becomes a stable feature.
 
 ## 👐 Contributing
 
@@ -135,22 +150,24 @@ $ cd {{cookiecutter.github_repository_name}}
 $ uv --preview pip install -e .
 ```
 
-Alternatively, install using legacy pip with `UV_PREVIEW` mode enabled until the
-uv build backend becomes a stable feature:
+Alternatively, install using pip:
 
 ```console
 $ UV_PREVIEW=1 python3 -m pip install -e .
 ```
 
+Note that this requires setting `UV_PREVIEW` mode enabled until the uv build
+backend becomes a stable feature.
+
 ### Updating Package Boilerplate
 
 This project uses `cruft` to keep boilerplate (i.e., configuration, contribution
 guidelines, documentation configuration) up-to-date with the upstream
-cookiecutter package. Update with the following:
+cookiecutter package. Install cruft with either `uv tool install cruft` or
+`python3 -m pip install cruft` then run:
 
 ```console
-python3 -m pip install cruft
-cruft update
+$ cruft update
 ```
 
 More info on Cruft's update command is available
@@ -159,11 +176,12 @@ More info on Cruft's update command is available
 ### 🥼 Testing
 
 After cloning the repository and installing `{{ cookiecutter.runner }}` with
+`uv tool install {{ cookiecutter.__runner_pip }}` or
 `python3 -m pip install {{ cookiecutter.__runner_pip }}`, the unit tests in the
 `tests/` folder can be run reproducibly with:
 
 ```console
-{{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
+$ {{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
 ```
 
 Additionally, these tests are automatically re-run with each commit in a
@@ -174,10 +192,10 @@ Additionally, these tests are automatically re-run with each commit in a
 The documentation can be built locally using the following:
 
 ```console
-git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
-cd {{cookiecutter.github_repository_name}}
-{{ cookiecutter.__runner }} docs
-open docs/build/html/index.html
+$ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
+$ cd {{cookiecutter.github_repository_name}}
+$ {{ cookiecutter.__runner }} docs
+$ open docs/build/html/index.html
 ```
 
 The documentation automatically installs the package as well as the `docs` extra
@@ -258,11 +276,12 @@ Note that this deprecates previous workflows using `.pypirc`.
 
 After installing the package in development mode and installing
 `{{ cookiecutter.runner }}` with
+`uv tool install {{ cookiecutter.__runner_pip }}` or
 `python3 -m pip install {{ cookiecutter.__runner_pip }}`, run the following from
 the console:
 
 ```console
-{{ cookiecutter.__runner }} finish
+$ {{ cookiecutter.__runner }} finish
 ```
 
 This script does the following:
