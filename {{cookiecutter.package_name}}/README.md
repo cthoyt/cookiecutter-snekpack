@@ -176,9 +176,9 @@ More info on Cruft's update command is available
 ### 🥼 Testing
 
 After cloning the repository and installing `{{ cookiecutter.runner }}` with
-`uv tool install {{ cookiecutter.__runner_pip }}` or
-`python3 -m pip install {{ cookiecutter.__runner_pip }}`, the unit tests in the
-`tests/` folder can be run reproducibly with:
+`{{ cookiecutter.__runner_install_uv }}` or
+`{{ cookiecutter.__runner_install_pip }}`, the unit tests in the `tests/` folder
+can be run reproducibly with:
 
 ```console
 $ {{ cookiecutter.__runner }} {{ cookiecutter.__runner_tests }}
@@ -275,10 +275,8 @@ Note that this deprecates previous workflows using `.pypirc`.
 #### Uploading to PyPI
 
 After installing the package in development mode and installing
-`{{ cookiecutter.runner }}` with
-`uv tool install {{ cookiecutter.__runner_pip }}` or
-`python3 -m pip install {{ cookiecutter.__runner_pip }}`, run the following from
-the console:
+`{{ cookiecutter.runner }}` with `{{ cookiecutter.__runner_install_uv }}` or
+`{{ cookiecutter.__runner_install_pip }}`, run the following from the console:
 
 ```console
 $ {{ cookiecutter.__runner }} finish
