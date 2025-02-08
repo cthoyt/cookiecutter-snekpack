@@ -19,6 +19,7 @@
     "tox",
     "nox"
   ],
+  "__not_charlie": "{% if cookiecutter['author_name'] == 'Charles Tapley Hoyt' %}{% else %}true{% endif %}",
   "__runner": "{% if cookiecutter['runner'] == 'tox' %}tox -e{% else %}nox -s{% endif %}",
   "__runner_uv": "{% if cookiecutter['runner'] == 'tox' %}--with tox-uv tox -e{% else %}nox -s{% endif %}",
   "__runner_pip": "{% if cookiecutter['runner'] == 'tox' %}tox tox-uv{% else %}nox[uv]{% endif %}",

@@ -1,4 +1,4 @@
-"""Command line interface for :mod:`{{cookiecutter.package_name}}`.
+"""Command line interface for :mod:`{{cookiecutter.package_name}}`.{% if cookiecutter.__not_charlie %}
 
 Why does this file exist, and why not put this in ``__main__``?
 You might be tempted to import things from ``__main__``
@@ -11,7 +11,7 @@ later, but that will cause problems--the code will get executed twice:
   there's no ``{{cookiecutter.package_name}}.__main__`` in ``sys.modules``.
 
 .. seealso:: https://click.palletsprojects.com/en/8.1.x/setuptools/#setuptools-integration
-"""
+{% endif %}"""
 
 import click
 

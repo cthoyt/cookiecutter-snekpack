@@ -1,6 +1,7 @@
 {{cookiecutter.package_name_stylized}} |release| Documentation
 {{'=' * (cookiecutter.package_name_stylized|length)}}========================
 
+{% if cookiecutter.__not_charlie %}
 Cookiecutter
 ------------
 This package was created with the `cookiecutter <https://github.com/cookiecutter/cookiecutter>`_
@@ -34,9 +35,8 @@ It comes with the following:
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
 - A copy of the `Contributor Covenant <https://www.contributor-covenant.org>`_ as a basic code of conduct
+{% endif %}
 
-Table of Contents
------------------
 .. toctree::
    :maxdepth: 2
    :caption: Getting Started
