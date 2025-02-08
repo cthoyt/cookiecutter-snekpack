@@ -1,7 +1,6 @@
 {{cookiecutter.package_name_stylized}} |release| Documentation
-{{'=' * (cookiecutter.package_name_stylized|length)}}========================
+{{'=' * (cookiecutter.package_name_stylized|length)}}========================{% if cookiecutter.__not_charlie %}
 
-{% if cookiecutter.__not_charlie %}
 Cookiecutter
 ------------
 This package was created with the `cookiecutter <https://github.com/cookiecutter/cookiecutter>`_
