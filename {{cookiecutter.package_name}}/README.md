@@ -33,7 +33,7 @@
     -->
 </p>
 
-{{cookiecutter.short_description}}
+{{cookiecutter.short_description}}.
 
 ## 💪 Getting Started
 
@@ -43,7 +43,7 @@
 
 {% if cookiecutter.command_line_interface|lower != "false" %}### Command Line Interface
 
-The {{cookiecutter.package_name}} command line tool is automatically installed.
+The `{{cookiecutter.package_name}}` command line tool is automatically installed.
 It can be used from the console with the `--help` flag to show all subcommands:
 
 ```console
