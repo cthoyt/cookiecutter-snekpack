@@ -126,6 +126,9 @@ source = [
 omit = [
     "tests/*",
     "docs/*",
+    "src/{{cookiecutter.package_name}}/version.py",
+    "src/{{cookiecutter.package_name}}/__main__.py",
+    "src/{{cookiecutter.package_name}}/cli.py",
 ]
 
 [tool.coverage.paths]
