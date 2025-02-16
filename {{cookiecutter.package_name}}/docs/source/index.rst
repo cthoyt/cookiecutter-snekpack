@@ -3,6 +3,7 @@
 
 Cookiecutter
 ------------
+
 This package was created with the `cookiecutter <https://github.com/cookiecutter/cookiecutter>`_
 package using `cookiecutter-snekpack <https://github.com/cthoyt/cookiecutter-snekpack>`_ template.
 It comes with the following:
@@ -37,16 +38,17 @@ It comes with the following:
 {% endif %}
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
-   :name: start
+    :maxdepth: 2
+    :caption: Getting Started
+    :name: start
 
-   installation
-   usage
+    installation
+    usage
 {% if cookiecutter.command_line_interface|lower != "false" %}   cli{% endif %}
 
 Indices and Tables
 ------------------
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+
+- :ref:`genindex`
+- :ref:`modindex`
+- :ref:`search`
