@@ -28,3 +28,8 @@ if __name__ == "__main__":
     subprocess.call([
         "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
     ])
+
+    # Invokes docstrfmt to clean up RST and docstrings
+    subprocess.call([
+        "uvx", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
+    ])
