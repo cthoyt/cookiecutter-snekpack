@@ -44,7 +44,7 @@ It comes with the following:
 
     installation
     usage
-{% if cookiecutter.command_line_interface|lower != "false" %}   cli{% endif %}
+{% if cookiecutter.command_line_interface|lower != "false" %}    cli{% endif %}
 
 Indices and Tables
 ------------------
