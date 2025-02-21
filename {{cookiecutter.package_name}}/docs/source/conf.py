@@ -46,7 +46,7 @@ html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
 if os.environ.get("READTHEDOCS", "") == "True":
     if "html_context" not in globals():
         html_context = {}
-    html_context["READTHEDOCS"] = True  # noqa: F821
+    html_context["READTHEDOCS"] = True
 
 
 # -- General configuration ---------------------------------------------------
