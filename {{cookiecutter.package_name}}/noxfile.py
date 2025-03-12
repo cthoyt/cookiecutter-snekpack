@@ -22,7 +22,7 @@ def install(session: nox.Session, *args: str) -> None:
     """Install command."""
     # TODO this might need to get updated to use session.run
     #  since the documentation says that it's deprecated
-    session.install(*args, env={"UV_PREVIEW": "1"})
+    session.install(*args)
 
 
 @nox.session(tags=["tests"])
@@ -147,7 +147,7 @@ def pyroma(session: nox.Session) -> None:
 @nox.session(tags=["dev"], default=False)
 def build(session: nox.Session) -> None:
     """Build the package."""
-    session.run("uv", "--preview", "build", "--sdist", "--wheel", "--no-build-isolation")
+    session.run("uv", "build", "--sdist", "--wheel", "--no-build-isolation")
 
 
 @nox.session(tags=["dev"], default=False)
