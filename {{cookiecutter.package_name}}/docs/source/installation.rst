@@ -37,7 +37,7 @@ To install in development mode with uv:
 .. code-block:: console
 
     $ git clone git+https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}.git
-    $cd {{cookiecutter.github_repository_name}}
+    $ cd {{cookiecutter.github_repository_name}}
     $ uv pip install -e .
 
 or with pip:
