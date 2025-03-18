@@ -91,9 +91,9 @@ doc8 = [
     { include-group = "docs" },
     "doc8",
 ]
-rstfmt = [
+format-docs = [
     { include-group = "docs" },
-    "rstfmt",
+    "docstrfmt",
 ]
 doctests = [
     "xdoctest",
@@ -112,7 +112,8 @@ build = [
 ]
 release = [
     { include-group = "build" },
-    "twine",
+    "uv",
+    "keyring",
 ]
 manifest = [
     "check-manifest",
