@@ -4,6 +4,7 @@
 
 import os
 import pathlib
+import subprocess
 
 PROJECT_DIRECTORY = pathlib.Path(os.path.realpath(os.path.curdir)).resolve()
 PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.package_name }}")
@@ -22,3 +23,13 @@ if __name__ == "__main__":
         PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
     else:
         PROJECT_DIRECTORY.joinpath("tox.ini").unlink()
+
+    # Invokes prettier to reformat markdown files
+    subprocess.call([
+        "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
+    ])
+
+    # Invokes docstrfmt to clean up RST and docstrings
+    subprocess.call([
+        "uvx", "--with", "sphinx==8.1", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
+    ])
