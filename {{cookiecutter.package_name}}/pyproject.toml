@@ -108,17 +108,12 @@ bump = [
 ]
 build = [
     "uv",
-    "setuptools",
 ]
 release = [
     { include-group = "build" },
     "uv",
     "keyring",
 ]
-manifest = [
-    "check-manifest",
-]
-
 
 # see https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
 # [project.optional-dependencies]
