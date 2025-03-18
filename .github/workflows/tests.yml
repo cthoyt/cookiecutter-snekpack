@@ -1,0 +1,37 @@
+# This file configures the continuous integration (CI) system on GitHub.
+# Introductory materials can be found here: https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions.
+# Documentation for editing this file can be found here: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
+name: Tests
+
+# by default, give the GITHUB_TOKEN no permissions
+# See https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token
+permissions: { }
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    name: Tests
+    permissions:
+      contents: read
+    runs-on: ${{ "{{" }} matrix.os {{ "}}" }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        python-version: [ "3.13", "3.10" ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Install uv"
+        uses: "astral-sh/setup-uv@v3"
+      - name: Build
+        run:
+          uvx -p {{ matrix.python-version }} cookiecutter .
+      - name: Test
+        run:
+          cd test
+          uvx -p {{ matrix.python-version }} tox
