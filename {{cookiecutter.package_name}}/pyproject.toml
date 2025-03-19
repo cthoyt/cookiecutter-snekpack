@@ -103,6 +103,7 @@ pyroma = [
     "pyroma",
     "pygments",
 ]
+# follow https://github.com/astral-sh/uv/issues/6298 for switching to a uv-based version bump workflow
 bump = [
     "bump-my-version",
 ]
