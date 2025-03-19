@@ -6,32 +6,57 @@ name: Tests
 
 # by default, give the GITHUB_TOKEN no permissions
 # See https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token
-permissions: { }
+permissions: {}
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   tests:
     name: Tests
     permissions:
       contents: read
-    runs-on: ${{ "{{" }} matrix.os {{ "}}" }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
-        python-version: [ "3.13", "3.10" ]
+        python-version: ["3.13"]
     steps:
       - uses: actions/checkout@v4
+
       - name: "Install uv"
         uses: "astral-sh/setup-uv@v3"
-      - name: Build
+
+      - name: Install Dependencies
+        run: |
+          uv python install ${{ matrix.python-version }}
+          uv tool install cookiecutter
+          uv tool install --with tox-uv tox
+
+      - name: Cut the Cookie
         run:
-          uvx -p {{ matrix.python-version }} cookiecutter .
-      - name: Test
-        run:
+          cookiecutter --no-input . package_name=test_octopus
+          "package_name_stylized=Test Octopus" "short_description=Test Octopus
+          Package Description" "author_name=Charles Tapley Hoyt"
+          "author_email=cthoyt@gmail.com" author_github=cthoyt
+          github_organization_name=cthoyt github_repository_name=test-octopus
+
+      - name: Commit
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git commit --all -m "Add cookiecutter to local git, but don't push"
+
+      - name: Run Tests via tox
+        run: cd test && tox
+
+      - name: Build via tox
+        run: cd test && tox -e build
+
+      - name: Bump Version via tox
+        run: |
           cd test
-          uvx -p {{ matrix.python-version }} tox
+          tox -e bumpversion -- minor
+          tox -e build
