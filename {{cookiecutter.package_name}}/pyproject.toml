@@ -109,6 +109,7 @@ bump = [
 ]
 build = [
     "uv",
+    "uv-build",
 ]
 release = [
     { include-group = "build" },
