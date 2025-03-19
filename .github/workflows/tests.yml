@@ -47,7 +47,8 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-          git commit --all -m "Add cookiecutter to local git, but don't push"
+          git add --all
+          git commit -m "Add cookiecutter to local git, but don't push"
 
       - name: Run Tests via tox
         run: cd test && tox
