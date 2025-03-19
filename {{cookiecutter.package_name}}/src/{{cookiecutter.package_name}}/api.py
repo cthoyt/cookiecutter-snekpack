@@ -32,4 +32,4 @@ def square(x: int) -> int:
     >>> square(5)
     25
     """
-    return x ** 2
+    return x**2

@@ -29,6 +29,7 @@ def main(name: str) -> None:
 
     hello(name)
 
+
 # If you want to have a multi-command CLI, see https://click.palletsprojects.com/en/latest/commands/
 
 
