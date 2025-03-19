@@ -31,5 +31,5 @@ if __name__ == "__main__":
 
     # Invokes docstrfmt to clean up RST and docstrings
     subprocess.call([
-        "uvx", "--with", "sphinx==8.1", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
+        "uvx", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
     ])
