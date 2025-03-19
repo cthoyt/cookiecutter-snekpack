@@ -37,11 +37,7 @@ jobs:
 
       - name: Cut the Cookie
         run:
-          cookiecutter --no-input . package_name=test_octopus
-          "package_name_stylized=Test Octopus" "short_description=Test Octopus
-          Package Description" "author_name=Charles Tapley Hoyt"
-          "author_email=cthoyt@gmail.com" author_github=cthoyt
-          github_organization_name=cthoyt github_repository_name=test-octopus
+          cookiecutter --no-input . package_name=test_octopus "package_name_stylized=Test Octopus" "short_description=Test Octopus Package Description" "author_name=Charles Tapley Hoyt" "author_email=cthoyt@gmail.com" author_github=cthoyt github_organization_name=cthoyt github_repository_name=test-octopus
 
       - name: Commit
         run: |
