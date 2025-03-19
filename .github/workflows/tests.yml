@@ -51,13 +51,13 @@ jobs:
           git commit -m "Add cookiecutter to local git, but don't push"
 
       - name: Run Tests via tox
-        run: cd test && tox
+        run: cd test_octopus && tox
 
       - name: Build via tox
-        run: cd test && tox -e build
+        run: cd test_octopus && tox -e build
 
       - name: Bump Version via tox
         run: |
-          cd test
+          cd test_octopus
           tox -e bumpversion -- minor
           tox -e build
