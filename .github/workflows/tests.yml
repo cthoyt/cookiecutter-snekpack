@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.13", "3.10"]
     steps:
       - uses: actions/checkout@v4
 
@@ -46,13 +46,13 @@ jobs:
           git add --all
           git commit -m "Add cookiecutter to local git, but don't push"
 
-      - name: Run Tests via tox
+      - name: Run tests
         run: cd test_octopus && tox
 
-      - name: Build via tox
+      - name: Test build
         run: cd test_octopus && tox -e build
 
-      - name: Bump Version via tox
+      - name: Test bumping version
         run: |
           cd test_octopus
           tox -e bumpversion -- minor
