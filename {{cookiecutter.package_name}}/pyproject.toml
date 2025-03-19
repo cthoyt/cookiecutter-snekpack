@@ -62,7 +62,8 @@ dependencies = [
     "typing-extensions",
 ]
 
-[project.optional-dependencies]
+# see https://peps.python.org/pep-0735/ and https://docs.astral.sh/uv/concepts/dependencies/#dependency-groups
+[dependency-groups]
 tests = [
     "pytest",
     "coverage[toml]",
@@ -78,6 +79,47 @@ docs = [
     # If you uncomment this, don't forget to do the same in docs/conf.py
     # texext
 ]
+lint = [
+    "ruff",
+]
+typing = [
+    "mypy",
+    "pydantic",
+    # You will probably have to add additional type stubs here, especially if you're using tox-uv
+]
+docs-lint = [
+    { include-group = "docs" },
+    "doc8",
+]
+format-docs = [
+    { include-group = "docs" },
+    "docstrfmt",
+]
+doctests = [
+    "xdoctest",
+    "pygments",
+]
+pyroma = [
+    "pyroma",
+    "pygments",
+]
+# follow https://github.com/astral-sh/uv/issues/6298 for switching to a uv-based version bump workflow
+bump = [
+    "bump-my-version",
+]
+build = [
+    "uv",
+    "uv-build",
+]
+release = [
+    { include-group = "build" },
+    "uv",
+    "keyring",
+]
+
+# see https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
+# [project.optional-dependencies]
+
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls
 # and also https://packaging.python.org/en/latest/specifications/well-known-project-urls/

@@ -59,8 +59,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install graphviz
-      - name: Check RST conformity with doc8
-        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} doc8
+      - name: Lint documentation
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docs-lint
       - name: Check docstring coverage
         run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docstr-coverage
       - name: Check documentation build with Sphinx
