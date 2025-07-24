@@ -203,7 +203,7 @@ with `{{ cookiecutter.__runner }} docs-test`) but also that
 #### Configuring ReadTheDocs
 
 [ReadTheDocs](https://readthedocs.org) is an external documentation hosting service
-that integrates with GitHub's CI/CD.
+that integrates with GitHub's CI/CD. Do the following for each repository:
 
 1. Log in to ReadTheDocs with your GitHub account to install the integration at
    https://readthedocs.org/accounts/login/?next=/dashboard/
@@ -216,7 +216,7 @@ that integrates with GitHub's CI/CD.
 #### Configuring Archival on Zenodo
 
 [Zenodo](https://zenodo.org) is a long-term archival system that assigns a DOI
-to each release of your package.
+to each release of your package. Do the following for each repository:
 
 1. Log in to Zenodo via GitHub with this link:
    https://zenodo.org/oauth/login/github/?next=%2F. This brings you to a page
@@ -250,9 +250,11 @@ can be easily installed with `pip`, `uv`, and equivalent tools.
    2-factor authentication
 4. Issue an API token from https://pypi.org/manage/account/token
 
+This only needs to be done once per developer.
+
 #### Configuring your machine's connection to PyPI
 
-You have to do the following steps once per machine.
+This needs to be done once per machine.
 
 ```console
 $ uv tool install keyring
