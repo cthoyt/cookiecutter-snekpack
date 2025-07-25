@@ -193,7 +193,7 @@ with `{{ cookiecutter.__runner }} docs-test`) but also that
 
 </details>
 
-## For Maintainers
+## 🧑‍💻 For Maintainers
 
 <details>
   <summary>See maintainer instructions</summary>
