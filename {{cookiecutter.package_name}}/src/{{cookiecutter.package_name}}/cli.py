@@ -21,7 +21,7 @@ __all__ = [
 
 
 @click.command()
-@click.option("--name", required=True, help="The name of the person to say hello to")
+{%- if cookiecutter.__not_charlie %}@click.option("--name", required=True, help="The name of the person to say hello to")
 def main(name: str) -> None:
     """CLI for {{cookiecutter.package_name}}."""
     # import inside the CLI to make running the --help command faster
@@ -31,6 +31,12 @@ def main(name: str) -> None:
 
 
 # If you want to have a multi-command CLI, see https://click.palletsprojects.com/en/latest/commands/
+
+{%- else %}
+def main() -> None:
+    """CLI for {{cookiecutter.package_name}}."""
+
+{%- else %}
 
 
 if __name__ == "__main__":
