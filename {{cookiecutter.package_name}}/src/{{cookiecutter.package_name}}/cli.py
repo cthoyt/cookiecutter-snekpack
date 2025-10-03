@@ -36,7 +36,7 @@ def main(name: str) -> None:
 def main() -> None:
     """CLI for {{cookiecutter.package_name}}."""
 
-{%- else %}
+{%- endif %}
 
 
 if __name__ == "__main__":
