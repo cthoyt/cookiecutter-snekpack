@@ -29,7 +29,8 @@ if __name__ == "__main__":
         "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
     ])
 
-    # Invokes docstrfmt to clean up RST and docstrings
+    # Invokes docstrfmt to clean up RST and docstrings. Note that this doesn't yet
+    # work on python 3.14+, see https://github.com/LilSpazJoekp/docstrfmt/issues/148
     subprocess.call([
-        "uvx", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
+        "uvx", "-p", "3.13", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
     ])
