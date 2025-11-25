@@ -23,14 +23,20 @@ template:
 
 1. Install `cruft` with:
 
-   ```shell
-   python -m pip install cruft
+   ```console
+   $ uv tool install cruft
+   ```
+
+   or old-style using `pip`:
+
+   ```console
+   $ python -m pip install cruft
    ```
 
 2. Run `cruft` with:
 
-   ```shell
-   cruft create https://github.com/cthoyt/cookiecutter-snekpack
+   ```console
+   $ cruft create https://github.com/cthoyt/cookiecutter-snekpack
    ```
 
 3. Enter the requested information, then win! Remember, package names should
@@ -57,8 +63,7 @@ Your new python package will have the following:
   - Testing of documentation coverage with `docstr-coverage`
   - Testing of documentation format
   - Testing of package metadata completeness with `pyroma`
-  - Testing of MANIFEST correctness with `check-manifest`
-  - Testing of optional static typing with `mypy`
+  - Strict testing of optional static typing with `mypy`
   - Version management with
     [`bump-my-version`](https://github.com/callowayproject/bump-my-version)
   - Building with
