@@ -73,6 +73,7 @@ Your new python package will have the following:
 - A command line interface with `click`
 - A vanity CLI via python entrypoints
 - A `py.typed` file so other packages can use your type hints
+- Automated local workflows with [`pre-commit`](https://pre-commit.com)
 - Automated running of tests on each push with
   [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 - Configuration for [ReadTheDocs](https://readthedocs.org/)
