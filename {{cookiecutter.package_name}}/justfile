@@ -13,7 +13,7 @@ coverage-clean:
 
 [doc("run `coverage` with a given subcommand")]
 @coverage command:
-    uvx --from coverage[toml] coverage {{command}}
+    uvx --from coverage[toml] coverage {% raw %}{{command}}{% endraw %}
 
 [doc("test that documentation examples run properly")]
 doctests:
@@ -36,3 +36,25 @@ format-docs:
     # or any other extension that adds extra directives
     # See the [dependency-groups] entry in pyproject.toml for "rstfmt"
     uv run --group format-docs docstrfmt src/ tests/ docs/ --no-docstring-trailing-line
+
+[doc("format documentation")]
+format-markdown:
+    npx --yes prettier --write --prose-wrap always "**/*.md"
+
+[doc("check code quality")]
+lint:
+    uvx ruff check
+    uvx ruff format --check
+
+[doc("check markdown is properly formatted")]
+lint-markdown:
+    # inspired by https://github.com/astral-sh/uv/blob/98523e2014e9a5c69706623344026d76296e178f/.github/workflows/ci.yml#L67C1-L70C61
+    npx --yes prettier --check --prose-wrap always "**/*.md"
+
+[doc("run the pyroma tool to check the package friendliness of the project")]
+pyroma:
+    uv run --group pyroma pyroma --min=10 .
+
+[doc("run the mypy tool to check static typing on the project")]
+mypy:
+    uv run --group typing mypy --ignore-missing-imports --strict src/ tests/
