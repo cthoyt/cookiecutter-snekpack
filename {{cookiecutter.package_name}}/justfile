@@ -81,7 +81,7 @@ docs:
 [doc("test building the documentation locally. warnings are considered as errors via -W")]
 docs-test:
     tmpdir=$(mktemp -d)
-    cp -r docs.source $$tmpdir/source
+    cp -r docs/source $$tmpdir/source
     uv run --group docs -m sphinx -W -b html -d $$tmpdir/build/doctrees $$tmpdir/source $$tmpdir/build/html
     rm -rf "$$tmpdir"
 
