@@ -74,10 +74,6 @@ docs-lint:
 docstr-coverage:
     uv run docstr-coverage src/ tests/ --skip-private --skip-magic
 
-[doc("build the documentation locally, allowing warnings")]
-docs:
-    uv run --group docs -m sphinx -b html -d docs/build/doctrees docs/source docs/build/html
-
 ####################
 # Deployment tools #
 ####################
