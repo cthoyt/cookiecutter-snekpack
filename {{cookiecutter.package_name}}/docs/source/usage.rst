@@ -1,4 +1,5 @@
 Usage
 =====
 
-.. automodapi:: {{cookiecutter.package_name}}.api
+.. automodule:: {{cookiecutter.package_name}}.api
+    :members:
