@@ -121,7 +121,7 @@ release = [
 ]
 
 # see https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
-# [project.optional-dependencies]
+[project.optional-dependencies]
 
 
 # See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#urls

@@ -11,13 +11,16 @@ test:
 coverage-clean:
     just coverage erase
 
+coverage-report:
+    just coverage report
+
 [doc("run `coverage` with a given subcommand")]
 @coverage command:
     uvx --from coverage[toml] coverage {% raw %}{{command}}{% endraw %}
 
+# Note that the package name is required for discovery
 [doc("test that documentation examples run properly")]
 doctests:
-    #  note that the package name is required for discovery
     uv run --group doctests --all-extras xdoctest -m src/{{ cookiecutter.package_name }}
 
 [doc("test that notebooks can be run to completion")]
@@ -26,7 +29,7 @@ treon:
 
 [doc("format code")]
 format:
-    #  Note that ruff check should come before ruff format when using --fix (ref: https://github.com/astral-sh/ruff-pre-commit/blob/main/README.md)
+    # Note that ruff check should come before ruff format when using --fix (ref: https://github.com/astral-sh/ruff-pre-commit/blob/main/README.md)
     uvx ruff check --fix
     uvx ruff format
 
@@ -55,6 +58,38 @@ lint-markdown:
 pyroma:
     uv run --group pyroma pyroma --min=10 .
 
-[doc("run the mypy tool to check static typing on the project")]
+[doc("run static type checking with mypy")]
 mypy:
     uv run --group typing mypy --ignore-missing-imports --strict src/ tests/
+
+[doc("run static type checking with ty")]
+ty:
+    uv run --group typing ty check src/ tests/
+
+[doc("run the doc8 tool to check the style of the RST files in the project docs")]
+docs-lint:
+    uv run --group docs-lint doc8 docs/source/
+
+[doc("run the docstr-coverage tool to check documentation coverage")]
+docstr-coverage:
+    uv run --group docstr-coverage docstr-coverage src/ tests/ --skip-private --skip-magic
+
+[doc("build the documentation locally, allowing warnings")]
+docs:
+    uv run --group docs -m sphinx -b html -d docs/build/doctrees docs/source docs/build/html
+
+####################
+# Deployment tools #
+####################
+
+[doc("run `bumpversion` with a given subcommand")]
+@bumpversion command:
+    uvx bump-my-version bump {% raw %}{{command}}{% endraw %}
+
+[doc("make a release")]
+bumpversion-release:
+    uvx bump-my-version bump release --tag
+
+[doc("build an sdist and wheel")]
+build:
+    uv build --sdist --wheel --no-build-isolation --clear
