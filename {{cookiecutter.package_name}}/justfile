@@ -72,7 +72,7 @@ docs-lint:
 
 [doc("run the docstr-coverage tool to check documentation coverage")]
 docstr-coverage:
-    uv run --group docstr-coverage docstr-coverage src/ tests/ --skip-private --skip-magic
+    uv run docstr-coverage src/ tests/ --skip-private --skip-magic
 
 [doc("build the documentation locally, allowing warnings")]
 docs:
