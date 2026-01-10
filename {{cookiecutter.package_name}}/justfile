@@ -76,15 +76,16 @@ docstr-coverage:
 
 [doc("build the documentation locally")]
 docs:
-    uv run --group docs -m sphinx -b html -d docs/build/doctrees docs/source docs/build/html
+    uv run --group docs --all-extras -m sphinx -b html -d docs/build/doctrees docs/source docs/build/html
 
 [doc("test building the documentation locally. warnings are considered as errors via -W")]
 docs-test:
+    #!/usr/bin/env bash
+    set -euo pipefail
     tmpdir=$(mktemp -d)
-    mkdir "$$tmpdir/source"
-    cp -r docs/source "$$tmpdir/source"
-    uv run --group docs -m sphinx -W -b html -d $$tmpdir/build/doctrees $$tmpdir/source $$tmpdir/build/html
-    rm -rf "$$tmpdir"
+    cp -r docs/source "$tmpdir/source"
+    uv run --group docs --all-extras -m sphinx -W -b html -d "$tmpdir/build/doctrees" "$tmpdir/source" "$tmpdir/build/html"
+    rm -rf "$tmpdir"
 
 ####################
 # Deployment tools #
