@@ -25,6 +25,6 @@ jobs:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
         run: |
           gh release create {% raw %}${{ github.ref_name }}{% endraw %} \
-            --title "Release {% raw %}${{ github.ref_name }}{% endraw %}" \
+            --title "{% raw %}${{ github.ref_name }}{% endraw %}" \
             --repo {% raw %}${{ github.repository }}{% endraw %} \
             --generate-notes
