@@ -16,15 +16,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
 
       - name: Create GitHub Release with auto notes
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
         run: |
-          gh release create ${{ github.ref_name }} \
-            --title "Release ${{ github.ref_name }}" \
-            --repo ${{ github.repository }} \
+          gh release create {% raw %}${{ github.ref_name }}{% endraw %} \
+            --title "Release {% raw %}${{ github.ref_name }}{% endraw %}" \
+            --repo {% raw %}${{ github.repository }}{% endraw %} \
             --generate-notes
