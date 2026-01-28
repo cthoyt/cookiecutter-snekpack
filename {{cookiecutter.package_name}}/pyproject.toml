@@ -70,7 +70,7 @@ tests = [
     "coverage[toml]",
 ]
 docs = [
-    "sphinx>=8",
+    "sphinx>=8,<9",
     "sphinx-rtd-theme>=3.0",
     {%- if cookiecutter.command_line_interface|lower != "false" %}"sphinx-click", {% endif %}
     "sphinx_automodapi",
