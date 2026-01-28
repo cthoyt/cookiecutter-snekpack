@@ -102,3 +102,31 @@ bumpversion-release:
 [doc("build an sdist and wheel")]
 build:
     uv build --sdist --wheel --no-build-isolation --clear
+
+[doc("Release the code to PyPI so users can pip install it, using credentials from keyring")]
+release:
+    just build
+    uv tool install keyring
+    uv publish --username __token__ --keyring-provider subprocess --publish-url https://upload.pypi.org/legacy/
+
+[doc("Run a workflow that removes -dev from the version, creates a tagged release on GitHub, creates a release on PyPI, and bumps the version again.")]
+finish:
+    just bumpversion-release
+    just release
+    git push --tags
+    uvx bump-my-version bump patch
+    git push
+
+[doc("Release the code to the test PyPI site")]
+test-release:
+    just build
+    uv tool install keyring
+    uv publish --username __token__ --keyring-provider subprocess --publish-url https://test.pypi.org/legacy/
+
+[doc("Run a workflow that removes -dev from the version, creates a tagged release on GitHub, creates a release on Test PyPI, and bumps the version again.")]
+test-finish:
+    just bumpversion-release
+    just test-release
+    git push --tags
+    uvx bump-my-version bump patch
+    git push
