@@ -4,6 +4,10 @@
 
 name: Tests
 
+# by default, give the GITHUB_TOKEN no permissions
+# See https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token
+permissions: { }
+
 on:
   push:
     branches: [ main ]
@@ -13,15 +17,20 @@ on:
 jobs:
   lint:
     name: Code Quality
+    permissions:
+      # give only read-only access to the contents of the repository
+      # this is the only permission this job requires, so keep it to the least privilege
+      # i.e., not to issues, discussions, actions, etc.
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.12", "3.10" ]
-        tox-command: ["manifest", "lint", "pyroma", "mypy"]
+        python-version: [ "3.14", "3.10" ]
+        tox-command: [ "lint", "pyroma", "mypy" ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: "Install uv"
-        uses: "astral-sh/setup-uv@v3"
+        uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7.2.0
         with:
           enable-cache: true
           cache-dependency-glob: "pyproject.toml"
@@ -31,48 +40,58 @@ jobs:
 
   docs:
     name: Documentation
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       matrix:
         # We only test documentation on the latest version
         # sphinx 8.0 / sphinx-rtd-theme 3.0 discontinued Python 3.9 support
         # a year early, which prompted re-thinking about this.
-        python-version: [ "3.12" ]
+        python-version: [ "3.14" ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: "Install uv"
-        uses: "astral-sh/setup-uv@v3"
+        uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7.2.0
         with:
           enable-cache: true
           cache-dependency-glob: "pyproject.toml"
       - name: Install dependencies
         run: |
           sudo apt-get install graphviz
-      - name: Check RST conformity with doc8
-        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} doc8
+      - name: Lint documentation
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docs-lint
       - name: Check docstring coverage
         run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docstr-coverage
       - name: Check documentation build with Sphinx
         run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docs-test
+      - name: Lint markdown
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} lint-markdown
+
   tests:
     name: Tests
+    permissions:
+      contents: read
     runs-on: ${{ "{{" }} matrix.os {{ "}}" }}
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        python-version: [ "3.12", "3.10" ]
+        python-version: [ "3.14", "3.10" ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: "Install uv"
-        uses: "astral-sh/setup-uv@v3"
+        uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7.2.0
         with:
           enable-cache: true
           cache-dependency-glob: "pyproject.toml"
       - name: Test with pytest and generate coverage file
         run:
           uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} {{ cookiecutter.__runner_tests }}
+      - name: Run doctests
+        run:
+          uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} doctests
       - name: Upload coverage report to codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         if: success()
         with:
           file: coverage.xml

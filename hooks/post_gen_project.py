@@ -4,6 +4,7 @@
 
 import os
 import pathlib
+import subprocess
 
 PROJECT_DIRECTORY = pathlib.Path(os.path.realpath(os.path.curdir)).resolve()
 PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.package_name }}")
@@ -25,3 +26,14 @@ if __name__ == "__main__":
 
     if "{{ cookiecutter.citation_file|lower }}" == "false":
         PROJECT_DIRECTORY.joinpath("CITATION.cff").unlink()
+
+    # Invokes prettier to reformat markdown files
+    subprocess.call([
+        "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
+    ])
+
+    # Invokes docstrfmt to clean up RST and docstrings. Note that this doesn't yet
+    # work on python 3.14+, see https://github.com/LilSpazJoekp/docstrfmt/issues/148
+    subprocess.call([
+        "uvx", "-p", "3.13", "docstrfmt", "src/", "tests/", "docs/", "--no-docstring-trailing-line",
+    ])

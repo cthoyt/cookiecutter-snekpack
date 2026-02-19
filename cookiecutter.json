@@ -3,6 +3,7 @@
   "package_name_stylized": "",
   "short_description": "",
   "author_name": "",
+  "author_github": "",
   "author_email": "",
   "github_organization_name": "",
   "github_repository_name": "",
@@ -22,9 +23,12 @@
     false,
     true
   ],
+  "__not_charlie": "{% if cookiecutter['author_name'] == 'Charles Tapley Hoyt' %}{% else %}true{% endif %}",
   "__runner": "{% if cookiecutter['runner'] == 'tox' %}tox -e{% else %}nox -s{% endif %}",
   "__runner_uv": "{% if cookiecutter['runner'] == 'tox' %}--with tox-uv tox -e{% else %}nox -s{% endif %}",
   "__runner_pip": "{% if cookiecutter['runner'] == 'tox' %}tox tox-uv{% else %}nox[uv]{% endif %}",
+  "__runner_install_uv": "{% if cookiecutter['runner'] == 'tox' %}uv tool install tox --with tox-uv{% else %}uv tool install nox[uv]{% endif %}",
+  "__runner_install_pip": "{% if cookiecutter['runner'] == 'tox' %}python3 -m pip install tox tox-uv{% else %}pip install nox[uv]{% endif %}",
   "__runner_tests": "{% if cookiecutter['runner'] == 'tox' %}py{% else %}tests{% endif %}",
   "__gh_slug": "{{ cookiecutter.github_organization_name }}/{{ cookiecutter.github_repository_name }}"
 }

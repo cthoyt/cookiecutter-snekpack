@@ -1,8 +1,9 @@
 {{cookiecutter.package_name_stylized}} |release| Documentation
-{{'=' * (cookiecutter.package_name_stylized|length)}}========================
+{{'=' * (cookiecutter.package_name_stylized|length)}}========================{% if cookiecutter.__not_charlie %}
 
 Cookiecutter
 ------------
+
 This package was created with the `cookiecutter <https://github.com/cookiecutter/cookiecutter>`_
 package using `cookiecutter-snekpack <https://github.com/cthoyt/cookiecutter-snekpack>`_ template.
 It comes with the following:
@@ -21,11 +22,12 @@ It comes with the following:
   - Testing of MANIFEST correctness with ``check-manifest``
   - Testing of optional static typing with ``mypy``
   - Version management with `bump-my-version <https://github.com/callowayproject/bump-my-version>`_
-  - Building with ``uv build``
-  - Releasing to PyPI with ``twine``
+  - Building with `uv build <https://docs.astral.sh/uv/guides/publish/#building-your-package>`_
+  - Releasing to PyPI with `uv publish <https://docs.astral.sh/uv/guides/publish/#publishing-your-package>`_
 - A command line interface with ``click``
 - A vanity CLI via python entrypoints
 - A `py.typed` file so other packages can use your type hints
+- Automated local workflows with `pre-commit <https://pre-commit.com/>`_
 - Automated running of tests on each push
   with `GitHub Actions <https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions>`_
 - Configuration for `ReadTheDocs <https://readthedocs.org>`_
@@ -34,20 +36,20 @@ It comes with the following:
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
 - A copy of the `Contributor Covenant <https://www.contributor-covenant.org>`_ as a basic code of conduct
+{% endif %}
 
-Table of Contents
------------------
 .. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
-   :name: start
+    :maxdepth: 2
+    :caption: Getting Started
+    :name: start
 
-   installation
-   usage
-{% if cookiecutter.command_line_interface|lower != "false" %}   cli{% endif %}
+    installation
+    usage
+{% if cookiecutter.command_line_interface|lower != "false" %}    cli{% endif %}
 
 Indices and Tables
 ------------------
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+
+- :ref:`genindex`
+- :ref:`modindex`
+- :ref:`search`

@@ -1,4 +1,4 @@
-"""This is a placeholder for putting the main code for your module.
+"""This is a placeholder for putting the main code for your module.{% if cookiecutter.__not_charlie %}
 
 If you don't want to keep ``api.py``, check the following places:
 
@@ -10,7 +10,7 @@ If you don't want to keep ``api.py``, check the following places:
    You'll want to delete this and replace it with other imports
 3. You don't need to update any linting or testing configuration since it is agnostic
    to the contents of the package.
-"""
+{% endif %}"""
 
 __all__ = [
     "hello",
@@ -32,4 +32,4 @@ def square(x: int) -> int:
     >>> square(5)
     25
     """
-    return x ** 2
+    return x**2
