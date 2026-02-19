@@ -24,6 +24,9 @@ if __name__ == "__main__":
     else:
         PROJECT_DIRECTORY.joinpath("tox.ini").unlink()
 
+    if "{{ cookiecutter.citation_file|lower }}" == "false":
+        PROJECT_DIRECTORY.joinpath("CITATION.cff").unlink()
+
     # Invokes prettier to reformat markdown files
     subprocess.call([
         "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
