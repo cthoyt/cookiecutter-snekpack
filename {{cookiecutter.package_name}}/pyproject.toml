@@ -54,11 +54,11 @@ license-files = [
 
 requires-python = ">=3.10"
 dependencies = [
-    "more_itertools", # missing from itertools in stdlib
+    "more-itertools", # missing from itertools in stdlib
     "tqdm", # progress bars
     {%- if cookiecutter.command_line_interface|lower != "false" %}
     "click",
-    "more_click",
+    "more-click",
     {%- endif %}
     "typing-extensions",
 ]
