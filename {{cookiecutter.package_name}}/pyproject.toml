@@ -120,8 +120,8 @@ Repository = "https://github.com/{{cookiecutter.__gh_slug}}.git"
 Documentation = "https://{{cookiecutter.package_name}}.readthedocs.io"
 Funding = "https://github.com/sponsors/{{ cookiecutter.author_github }}"
 
-{% if cookiecutter.command_line_interface|lower != "false" -%}
 [project.scripts]
+{%- if cookiecutter.command_line_interface|lower != "false" %}
 {{ cookiecutter.package_name }} = "{{cookiecutter.package_name}}.cli:main"
 {%- endif %}
 
@@ -158,7 +158,9 @@ omit = [
     "docs/*",
     "src/{{cookiecutter.package_name}}/version.py",
     "src/{{cookiecutter.package_name}}/__main__.py",
+    {%- if cookiecutter.command_line_interface|lower != "false" %}
     "src/{{cookiecutter.package_name}}/cli.py",
+    {%- endif %}
 ]
 
 [tool.coverage.paths]

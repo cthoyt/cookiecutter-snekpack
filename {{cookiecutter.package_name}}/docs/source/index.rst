@@ -11,8 +11,7 @@ It comes with the following:
 - Standard ``src/`` layout
 - Declarative setup with `pyproject.toml` (following `PEP 621 <https://peps.python.org/pep-0621/>`_)
 - Reproducible workflows configured with ``{{ cookiecutter.runner }}``
-  - Reproducible tests with ``pytest``{% if cookiecutter.command_line_interface|lower != "false" %}
-  - A command line interface with ``click``{% endif %}
+  - Reproducible tests with ``pytest``
   - Reproducible notebooks with `treon <https://github.com/reviewNB/treon>`_
   - Documentation build with ``sphinx`` 8.0 and ``sphinx-rtd-theme`` 3.0
   - Testing of code quality with ``ruff``
@@ -24,8 +23,10 @@ It comes with the following:
   - Version management with `bump-my-version <https://github.com/callowayproject/bump-my-version>`_
   - Building with `uv build <https://docs.astral.sh/uv/guides/publish/#building-your-package>`_
   - Releasing to PyPI with `uv publish <https://docs.astral.sh/uv/guides/publish/#publishing-your-package>`_
+{%- if cookiecutter.command_line_interface|lower != "false" %}
 - A command line interface with ``click``
 - A vanity CLI via python entrypoints
+{%- endif %}
 - A `py.typed` file so other packages can use your type hints
 - Automated local workflows with `pre-commit <https://pre-commit.com/>`_
 - Automated running of tests on each push
