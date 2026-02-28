@@ -2,17 +2,17 @@ Installation
 ============
 
 The most recent release can be installed from `PyPI
-<https://pypi.org/project/{{cookiecutter.package_name}}>`_ with uv:
+<https://pypi.org/project/{{ cookiecutter.__package_name_dashed }}>`_ with uv:
 
 .. code-block:: console
 
-    $ uv pip install {{cookiecutter.package_name}}
+    $ uv pip install {{ cookiecutter.__package_name_dashed }}
 
 or with pip:
 
 .. code-block:: console
 
-    $ python3 -m pip install {{cookiecutter.package_name}}
+    $ python3 -m pip install {{ cookiecutter.__package_name_dashed }}
 
 Installing from git
 -------------------
