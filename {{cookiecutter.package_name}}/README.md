@@ -11,12 +11,12 @@
 <p align="center">{# note to future charlie - the </a> is on same line to avoid trailing whitespce #}
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions/workflows/tests.yml">
         <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/actions/workflows/tests.yml/badge.svg" /></a>
-    <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
-        <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.package_name}}" /></a>
-    <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
-        <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}" /></a>
+    <a href="https://pypi.org/project/{{cookiecutter.__package_name_dashed}}">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.__package_name_dashed}}" /></a>
+    <a href="https://pypi.org/project/{{cookiecutter.__package_name_dashed}}">
+        <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/{{cookiecutter.__package_name_dashed}}" /></a>
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/main/LICENSE">
-        <img alt="PyPI - License" src="https://img.shields.io/pypi/l/{{cookiecutter.package_name}}" /></a>
+        <img alt="PyPI - License" src="https://img.shields.io/pypi/l/{{cookiecutter.__package_name_dashed}}" /></a>
     <a href='https://{{cookiecutter.package_name}}.readthedocs.io/en/latest/?badge=latest'>
         <img src='https://readthedocs.org/projects/{{cookiecutter.package_name}}/badge/?version=latest' alt='Documentation Status' /></a>
     <a href="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/branch/main">
@@ -43,11 +43,11 @@
 
 {% if cookiecutter.command_line_interface|lower != "false" %}### Command Line Interface
 
-The `{{cookiecutter.package_name}}` command line tool is automatically installed.
+The `{{cookiecutter.__package_name_dashed}}` command line tool is automatically installed.
 It can be used from the console with the `--help` flag to show all subcommands:
 
 ```console
-$ {{cookiecutter.package_name}} --help
+$ {{cookiecutter.__package_name_dashed}} --help
 ```
 
 > TODO show the most useful thing the CLI does! The CLI will have documentation
@@ -57,16 +57,16 @@ $ {{cookiecutter.package_name}} --help
 
 <!-- Uncomment this section after your first ``{{ cookiecutter.__runner }} finish``
 The most recent release can be installed from
-[PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/) with uv:
+[PyPI](https://pypi.org/project/{{cookiecutter.__package_name_dashed}}/) with uv:
 
 ```console
-$ uv pip install {{cookiecutter.package_name}}
+$ uv pip install {{cookiecutter.__package_name_dashed}}
 ```
 
 or with pip:
 
 ```console
-$ python3 -m pip install {{cookiecutter.package_name}}
+$ python3 -m pip install {{cookiecutter.__package_name_dashed}}
 ```
 -->
 

@@ -30,5 +30,6 @@
   "__runner_install_uv": "{% if cookiecutter['runner'] == 'tox' %}uv tool install tox --with tox-uv{% else %}uv tool install nox[uv]{% endif %}",
   "__runner_install_pip": "{% if cookiecutter['runner'] == 'tox' %}python3 -m pip install tox tox-uv{% else %}pip install nox[uv]{% endif %}",
   "__runner_tests": "{% if cookiecutter['runner'] == 'tox' %}py{% else %}tests{% endif %}",
-  "__gh_slug": "{{ cookiecutter.github_organization_name }}/{{ cookiecutter.github_repository_name }}"
+  "__gh_slug": "{{ cookiecutter.github_organization_name }}/{{ cookiecutter.github_repository_name }}",
+  "__package_name_dashed": "{{ cookiecutter['package_name'].replace('_', '-') }}"
 }
