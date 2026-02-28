@@ -14,9 +14,9 @@
     <a href="https://pypi.org/project/{{cookiecutter.__package_name_dashed}}">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.__package_name_dashed}}" /></a>
     <a href="https://pypi.org/project/{{cookiecutter.__package_name_dashed}}">
-        <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}" /></a>
+        <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/{{cookiecutter.__package_name_dashed}}" /></a>
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/main/LICENSE">
-        <img alt="PyPI - License" src="https://img.shields.io/pypi/l/{{cookiecutter.package_name}}" /></a>
+        <img alt="PyPI - License" src="https://img.shields.io/pypi/l/{{cookiecutter.__package_name_dashed}}" /></a>
     <a href='https://{{cookiecutter.package_name}}.readthedocs.io/en/latest/?badge=latest'>
         <img src='https://readthedocs.org/projects/{{cookiecutter.package_name}}/badge/?version=latest' alt='Documentation Status' /></a>
     <a href="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/branch/main">
