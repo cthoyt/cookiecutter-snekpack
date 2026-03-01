@@ -30,6 +30,28 @@
   "__runner_install_uv": "{% if cookiecutter['runner'] == 'tox' %}uv tool install tox --with tox-uv{% else %}uv tool install nox[uv]{% endif %}",
   "__runner_install_pip": "{% if cookiecutter['runner'] == 'tox' %}python3 -m pip install tox tox-uv{% else %}pip install nox[uv]{% endif %}",
   "__runner_tests": "{% if cookiecutter['runner'] == 'tox' %}py{% else %}tests{% endif %}",
+  {%- if cookiecutter['runner'] == 'just' %}
+  "__runner": "just",
+  "__runner_uv": "--from rust-just just",
+  "__runner_pip": "rust-just",
+  "__runner_install_uv": "uv tool install rust-just",
+  "__runner_install_pip": "python3 -m pip install rust-just",
+  "__runner_tests": "test",
+  {%- if cookiecutter['runner'] == 'tox' %}
+  "__runner": "tox -e",
+  "__runner_uv": "--with tox-uv tox -e",
+  "__runner_pip": "tox tox-uv",
+  "__runner_install_uv": "uv tool install tox --with tox-uv",
+  "__runner_install_pip": "python3 -m pip install tox tox-uv",
+  "__runner_tests": "py",
+  {%- elif if cookiecutter['runner'] == 'nox' %}
+  "__runner": "nox -s",
+  "__runner_uv": "nox -s",
+  "__runner_pip": "nox[uv]",
+  "__runner_install_uv": "uv tool install nox[uv]",
+  "__runner_install_pip": "pip install nox[uv]",
+  "__runner_tests": "tests",
+  {%- endif %}
   "__gh_slug": "{{ cookiecutter.github_organization_name }}/{{ cookiecutter.github_repository_name }}",
   "__package_name_dashed": "{{ cookiecutter['package_name'].replace('_', '-') }}"
 }
