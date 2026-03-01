@@ -19,10 +19,16 @@ if __name__ == "__main__":
     if "{{ cookiecutter.gitlab|lower }}" == "false":
         PROJECT_DIRECTORY.joinpath(".gitlab-ci.yml").unlink()
 
-    if "{{ cookiecutter.runner }}" == "tox":
-        PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
-    else:
-        PROJECT_DIRECTORY.joinpath("tox.ini").unlink()
+    match "{{ cookiecutter.runner }}":
+        case "just":
+            PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
+        case "tox":
+            PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
+        case "nox":
+            PROJECT_DIRECTORY.joinpath("tox.ini").unlink()
+            PROJECT_DIRECTORY.joinpath("justfile").unlink()
+        case _:
+            raise ValueError("unknown runner: ")
 
     if "{{ cookiecutter.citation_file|lower }}" == "false":
         PROJECT_DIRECTORY.joinpath("CITATION.cff").unlink()
