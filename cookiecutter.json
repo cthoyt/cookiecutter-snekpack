@@ -16,6 +16,7 @@
     true
   ],
   "runner": [
+    "just",
     "tox",
     "nox"
   ],
