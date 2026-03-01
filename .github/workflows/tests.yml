@@ -76,7 +76,7 @@ jobs:
         run: |
           uv python install ${{ matrix.python-version }}
           uv tool install cookiecutter
-          uv tool install nox
+          uv tool install nox[uv]
 
       - name: Cut the Cookie
         run:
