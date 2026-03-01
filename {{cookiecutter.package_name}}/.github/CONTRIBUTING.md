@@ -58,8 +58,8 @@ comment, and we will help you.
 
 ### Pre-commit
 
-You can optionally use [pre-commit](https://pre-commit.com) to automate running key
-code quality checks on each commit. Enable it with:
+You can optionally use [pre-commit](https://pre-commit.com) to automate running
+key code quality checks on each commit. Enable it with:
 
 ```console
 $ uvx pre-commit install
