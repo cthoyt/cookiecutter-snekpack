@@ -15,8 +15,8 @@ on:
     branches: [main]
 
 jobs:
-  tests:
-    name: Tests
+  tests-tox:
+    name: Tests w/ Tox
     permissions:
       contents: read
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
 
       - name: Cut the Cookie
         run:
-          cookiecutter --no-input . package_name=test_octopus "package_name_stylized=Test Octopus" "short_description=Test Octopus Package Description" "author_name=Charles Tapley Hoyt" "author_email=cthoyt@gmail.com" author_github=cthoyt github_organization_name=cthoyt github_repository_name=test-octopus
+          cookiecutter --no-input . package_name=test_octopus "package_name_stylized=Test Octopus" "short_description=Test Octopus Package Description" "author_name=Charles Tapley Hoyt" "author_email=cthoyt@gmail.com" author_github=cthoyt github_organization_name=cthoyt github_repository_name=test-octopus runner=tox
 
       - name: Commit
         run: |
@@ -57,3 +57,46 @@ jobs:
           cd test_octopus
           tox -e bumpversion -- minor
           tox -e build
+
+  tests-just:
+    name: Tests w/ Just
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.14", "3.10" ]
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: "Install uv"
+        uses: "astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098" # v7.3.1
+
+      - name: Install Dependencies
+        run: |
+          uv python install ${{ matrix.python-version }}
+          uv tool install cookiecutter
+          uv tool install rust-just
+
+      - name: Cut the Cookie
+        run:
+          cookiecutter --no-input . package_name=test_octopus "package_name_stylized=Test Octopus" "short_description=Test Octopus Package Description" "author_name=Charles Tapley Hoyt" "author_email=cthoyt@gmail.com" author_github=cthoyt github_organization_name=cthoyt github_repository_name=test-octopus runner=just
+
+      - name: Commit
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add --all
+          git commit -m "Add cookiecutter to local git, but don't push"
+
+      - name: Run tests
+        run: cd test_octopus && just test
+
+      - name: Test build
+        run: cd test_octopus && just build
+
+      - name: Test bumping version
+        run: |
+          cd test_octopus
+          just bumpversion minor
+          just build
