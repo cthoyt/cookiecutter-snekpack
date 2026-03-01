@@ -98,5 +98,5 @@ jobs:
       - name: Test bumping version
         run: |
           cd test_octopus
-          just bumpversion -- minor
+          just bumpversion minor
           just build
