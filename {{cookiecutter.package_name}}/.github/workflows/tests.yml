@@ -6,13 +6,13 @@ name: Tests
 
 # by default, give the GITHUB_TOKEN no permissions
 # See https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token
-permissions: { }
+permissions: {}
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   lint:
@@ -25,8 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.14", "3.10" ]
-        tox-command: [ "lint", "pyroma", "mypy" ]
+        python-version: ["3.14", "3.10"]
+        tox-command: ["lint", "pyroma", "mypy"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: "Install uv"
@@ -48,7 +48,7 @@ jobs:
         # We only test documentation on the latest version
         # sphinx 8.0 / sphinx-rtd-theme 3.0 discontinued Python 3.9 support
         # a year early, which prompted re-thinking about this.
-        python-version: [ "3.14" ]
+        python-version: ["3.14"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: "Install uv"
@@ -75,8 +75,8 @@ jobs:
     runs-on: ${{ "{{" }} matrix.os {{ "}}" }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
-        python-version: [ "3.14", "3.10" ]
+        os: [ubuntu-latest]
+        python-version: ["3.14", "3.10"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: "Install uv"

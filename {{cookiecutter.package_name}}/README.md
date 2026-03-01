@@ -155,8 +155,8 @@ $ python3 -m pip install -e .
 
 ### Pre-commit
 
-You can optionally use [pre-commit](https://pre-commit.com) to automate running key
-code quality checks on each commit. Enable it with:
+You can optionally use [pre-commit](https://pre-commit.com) to automate running
+key code quality checks on each commit. Enable it with:
 
 ```console
 $ uvx pre-commit install
@@ -218,8 +218,9 @@ with `{{ cookiecutter.__runner }} docs-test`) but also that
 
 #### Configuring ReadTheDocs
 
-[ReadTheDocs](https://readthedocs.org) is an external documentation hosting service
-that integrates with GitHub's CI/CD. Do the following for each repository:
+[ReadTheDocs](https://readthedocs.org) is an external documentation hosting
+service that integrates with GitHub's CI/CD. Do the following for each
+repository:
 
 1. Log in to ReadTheDocs with your GitHub account to install the integration at
    https://readthedocs.org/accounts/login/?next=/dashboard/
@@ -252,8 +253,8 @@ to see the DOI for the release and link to the Zenodo record for it.
 
 #### Registering with the Python Package Index (PyPI)
 
-The [Python Package Index (PyPI)](https://pypi.org) hosts packages so they
-can be easily installed with `pip`, `uv`, and equivalent tools.
+The [Python Package Index (PyPI)](https://pypi.org) hosts packages so they can
+be easily installed with `pip`, `uv`, and equivalent tools.
 
 1. Register for an account [here](https://pypi.org/account/register)
 2. Navigate to https://pypi.org/manage/account and make sure you have verified
