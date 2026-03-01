@@ -25,7 +25,7 @@ classifiers = [
     "Framework :: Pytest",
     {%- if cookiecutter.runner == "tox" %}
     "Framework :: tox",
-    {%- else %}
+    {%- elif cookiecutter.runner == "nox" %}
     # note that there is currently no Trove classifier for Nox
     {%- endif %}
     "Framework :: Sphinx",
@@ -166,7 +166,11 @@ omit = [
 [tool.coverage.paths]
 source = [
     "src/{{cookiecutter.package_name}}",
-    ".{{ cookiecutter.runner }}/*/lib/python*/site-packages/{{cookiecutter.package_name}}",
+    {%- if cookiecutter.runner == "tox" %}
+    ".tox/*/lib/python*/site-packages/{{cookiecutter.package_name}}",
+    {%- elif cookiecutter.runner == "nox" %}
+    ".nox/*/lib/python*/site-packages/{{cookiecutter.package_name}}",
+    {%- endif %}
 ]
 
 [tool.coverage.report]
