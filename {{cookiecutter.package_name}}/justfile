@@ -54,6 +54,10 @@ lint-markdown:
     # inspired by https://github.com/astral-sh/uv/blob/98523e2014e9a5c69706623344026d76296e178f/.github/workflows/ci.yml#L67C1-L70C61
     npx --yes prettier --check --prose-wrap always "**/*.md"
 
+[doc("check justfile is properly formatted")]
+lint-justfile:
+    just --fmt --unstable
+
 [doc("run the pyroma tool to check the package friendliness of the project")]
 pyroma:
     uv run --group pyroma pyroma --min=10 .
