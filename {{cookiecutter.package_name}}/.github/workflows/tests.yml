@@ -67,6 +67,8 @@ jobs:
         run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} docs-test
       - name: Lint markdown
         run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} lint-markdown
+      - name: Lint justfile
+        run: uvx -p ${{ "{{" }} matrix.python-version {{ "}}" }} {{ cookiecutter.__runner_uv }} lint-justfile
 
   tests:
     name: Tests

@@ -7,23 +7,10 @@
   "author_email": "",
   "github_organization_name": "",
   "github_repository_name": "",
-  "command_line_interface": [
-    true,
-    false
-  ],
-  "gitlab": [
-    false,
-    true
-  ],
-  "runner": [
-    "just",
-    "tox",
-    "nox"
-  ],
-  "citation_file": [
-    false,
-    true
-  ],
+  "command_line_interface": [true, false],
+  "gitlab": [false, true],
+  "runner": ["just", "tox", "nox"],
+  "citation_file": [false, true],
   "__not_charlie": "{% if cookiecutter['author_name'] == 'Charles Tapley Hoyt' %}{% else %}true{% endif %}",
   "__runner": "{% if cookiecutter['runner'] == 'tox' %}tox -e{% elif cookiecutter['runner'] == 'just' %}just{% else %}nox -s{% endif %}",
   "__runner_uv": "{% if cookiecutter['runner'] == 'tox' %}--with tox-uv tox -e{% elif cookiecutter['runner'] == 'just' %}--from rust-just just{% else %}nox -s{% endif %}",

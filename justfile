@@ -1,6 +1,6 @@
 pinact:
-  pinact run --update
-  cd \{\{cookiecutter.package_name\}\} && pinact run --update
+    pinact run --update
+    cd \{\{cookiecutter.package_name\}\} && pinact run --update
 
 format:
     npx prettier --prose-wrap always --check "**/*.md" --write
