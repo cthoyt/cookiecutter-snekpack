@@ -86,7 +86,7 @@ $ python3 -m pip install git+https://github.com/{{cookiecutter.github_organizati
 
 Contributions, whether filing an issue, making a pull request, or forking, are
 appreciated. See
-[CONTRIBUTING.md](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/master/.github/CONTRIBUTING.md)
+[CONTRIBUTING.md](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.github_repository_name}}/blob/main/.github/CONTRIBUTING.md)
 for more information on getting involved.
 
 ## 👋 Attribution

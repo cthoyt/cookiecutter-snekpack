@@ -2,7 +2,7 @@
 
 """Code to run before generating the project.
 
-Adapted from https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/master/hooks/pre_gen_project.py.
+Adapted from https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/main/hooks/pre_gen_project.py.
 """
 
 import re
