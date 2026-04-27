@@ -65,6 +65,7 @@ jobs:
       - name: Install Dependencies
         run: |
           uv tool install cookiecutter
+          uv tool install zizmor
           uv tool install --with tox-uv tox
 
       - name: Cut the Cookie
@@ -80,6 +81,9 @@ jobs:
 
       - name: Run tests
         run: cd test_octopus && tox
+
+      - name: Test zizmor
+        run: zizmor .
 
       - name: Test build
         run: cd test_octopus && tox -e build
@@ -111,6 +115,7 @@ jobs:
       - name: Install Dependencies
         run: |
           uv tool install cookiecutter
+          uv tool install zizmor
           uv tool install rust-just
 
       - name: Cut the Cookie
@@ -126,6 +131,9 @@ jobs:
 
       - name: Run tests
         run: cd test_octopus && just test
+
+      - name: Test zizmor
+        run: zizmor .
 
       - name: Test build
         run: cd test_octopus && just build
