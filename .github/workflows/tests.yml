@@ -83,7 +83,7 @@ jobs:
         run: cd test_octopus && tox
 
       - name: Test zizmor
-        run: zizmor .
+        run: zizmor test_octopus
 
       - name: Test build
         run: cd test_octopus && tox -e build
@@ -133,7 +133,7 @@ jobs:
         run: cd test_octopus && just test
 
       - name: Test zizmor
-        run: zizmor .
+        run: zizmor test_octopus
 
       - name: Test build
         run: cd test_octopus && just build
