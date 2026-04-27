@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: "Install uv"
         uses: "astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57" # v8.0.0
@@ -52,14 +54,18 @@ jobs:
         python-version: ["3.14", "3.10"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: "Install uv"
         uses: "astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57" # v8.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Dependencies
         run: |
-          uv python install ${{ matrix.python-version }}
           uv tool install cookiecutter
+          uv tool install zizmor
           uv tool install --with tox-uv tox
 
       - name: Cut the Cookie
@@ -75,6 +81,9 @@ jobs:
 
       - name: Run tests
         run: cd test_octopus && tox
+
+      - name: Test zizmor
+        run: zizmor test_octopus
 
       - name: Test build
         run: cd test_octopus && tox -e build
@@ -95,14 +104,18 @@ jobs:
         python-version: ["3.14", "3.10"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: "Install uv"
         uses: "astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57" # v8.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Dependencies
         run: |
-          uv python install ${{ matrix.python-version }}
           uv tool install cookiecutter
+          uv tool install zizmor
           uv tool install rust-just
 
       - name: Cut the Cookie
@@ -118,6 +131,9 @@ jobs:
 
       - name: Run tests
         run: cd test_octopus && just test
+
+      - name: Test zizmor
+        run: zizmor test_octopus
 
       - name: Test build
         run: cd test_octopus && just build
