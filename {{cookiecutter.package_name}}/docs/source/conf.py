@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath("../../src"))
 # -- Project information -----------------------------------------------------
 
 project = "{{cookiecutter.package_name}}"
-copyright = f"{date.today().year}, {{cookiecutter.author_name}}"
+copyright = f"{date.today().year}, {{cookiecutter.author_name}}"  # noqa:DTZ011
 author = "{{cookiecutter.author_name}}"
 
 # The full version, including alpha/beta/rc tags.
