@@ -135,6 +135,7 @@ skip = [
 plugins = [
     "pydantic.mypy",
 ]
+ignore_missing_imports = true
 
 # Doc8, see https://doc8.readthedocs.io/en/stable/readme.html#ini-file-usage
 [tool.doc8]
