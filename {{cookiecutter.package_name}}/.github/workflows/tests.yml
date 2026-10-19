@@ -48,9 +48,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # We only test documentation on the latest version
-        # sphinx 8.0 / sphinx-rtd-theme 3.0 discontinued Python 3.9 support
-        # a year early, which prompted re-thinking about this.
         python-version: ["3.15"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
