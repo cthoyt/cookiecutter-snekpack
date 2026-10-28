@@ -27,6 +27,10 @@ doctests:
 treon:
     uv run treon
 
+[doc("spell check")]
+spelling:
+    uvx codespell src docs tests
+
 [doc("format code")]
 format:
     # Note that ruff check should come before ruff format when using --fix (ref: https://github.com/astral-sh/ruff-pre-commit/blob/main/README.md)
