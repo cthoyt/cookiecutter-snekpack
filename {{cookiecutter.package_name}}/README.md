@@ -308,7 +308,7 @@ This script does the following:
 4. Push to GitHub. You'll need to make a release going with the commit where the
    version was bumped.
 5. Bump the version to the next patch. If you made big changes and want to bump
-   the version by minor, you can use `tox -e bumpversion -- minor` after.
+   the version by minor, you can use `{{ cookiecutter.__runner }} bumpversion -- minor` after.
 
 #### Releasing on GitHub
 
