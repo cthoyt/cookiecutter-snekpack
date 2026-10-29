@@ -33,6 +33,9 @@ if __name__ == "__main__":
     if "{{ cookiecutter.citation_file|lower }}" == "false":
         PROJECT_DIRECTORY.joinpath("CITATION.cff").unlink()
 
+    if "{{ cookiecutter.pre_commit|lower }}" == "false":
+        PROJECT_DIRECTORY.joinpath(".pre-commit-config.yaml").unlink()
+
     # Invokes prettier to reformat markdown files
     subprocess.call([
         "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
