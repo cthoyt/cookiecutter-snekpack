@@ -40,7 +40,7 @@ It comes with the following:
 - A pre-formatted README with badges
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide
-- A copy of the `Contributor Covenant <https://www.contributor-covenant.org>`_ as a basic code of conduct
+- A copy of the `Contributor Covenant 3.0 <https://www.contributor-covenant.org>`_ as a basic code of conduct
 {% endif %}
 
 .. toctree::
