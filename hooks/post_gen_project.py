@@ -36,7 +36,7 @@ if __name__ == "__main__":
     if "{{ cookiecutter.pre_commit|lower }}" == "false":
         PROJECT_DIRECTORY.joinpath(".pre-commit-config.yaml").unlink()
 
-    # Invokes prettier to reformat markdown files
+    # Invokes prettier to reformat Markdown files
     subprocess.call([
         "npx", "--yes", "prettier", "--prose-wrap", "always", "--write", "**/*.md",
     ])
