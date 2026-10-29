@@ -153,6 +153,7 @@ Alternatively, install using pip:
 $ python3 -m pip install -e .
 ```
 
+{%- if cookiecutter.pre_commit|lower != "false" %}
 ### Pre-commit
 
 You can optionally use [pre-commit](https://pre-commit.com) to automate running
@@ -168,6 +169,7 @@ Or using `pip`:
 $ pip install pre-commit
 $ pre-commit install
 ```
+{%- endif %}
 
 ### 🥼 Testing
 

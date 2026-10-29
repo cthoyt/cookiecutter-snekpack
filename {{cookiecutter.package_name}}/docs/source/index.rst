@@ -13,10 +13,12 @@ It comes with the following:
 - Reproducible workflows configured with ``{{ cookiecutter.runner }}``
   - Reproducible tests with ``pytest``
   - Reproducible notebooks with `treon <https://github.com/reviewNB/treon>`_
-  - Documentation build with ``sphinx`` 8.0 and ``sphinx-rtd-theme`` 3.0
+  - Spell check with `codespell <https://github.com/codespell-project/codespell>`_
+  - Documentation build with `sphinx <https://www.sphinx-doc.org>`_
+    and `sphinx-rtd-theme <https://github.com/readthedocs/sphinx_rtd_theme>`_
   - Testing of code quality with ``ruff``
   - Testing of documentation coverage with ``docstr-coverage``
-  - Testing of documentation format
+  - Testing of documentation format with ``docstrfmt``
   - Testing of package metadata completeness with ``pyroma``
   - Testing of MANIFEST correctness with ``check-manifest``
   - Testing of optional static typing with ``mypy``
@@ -28,7 +30,9 @@ It comes with the following:
 - A vanity CLI via python entrypoints
 {%- endif %}
 - A `py.typed` file so other packages can use your type hints
+{%- if cookiecutter.pre_commit|lower != "false" %}
 - Automated local workflows with `pre-commit <https://pre-commit.com/>`_
+{%- endif %}
 - Automated running of tests on each push
   with `GitHub Actions <https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions>`_
 - Configuration for `ReadTheDocs <https://readthedocs.org>`_

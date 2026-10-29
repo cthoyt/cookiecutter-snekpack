@@ -58,10 +58,12 @@ Your new python package will have the following:
 - Reproducible workflows configured with `tox` or `nox`
   - Reproducible tests with `pytest` and
   - Reproducible notebooks with [`treon`](https://github.com/reviewNB/treon)
-  - Documentation build with `sphinx` 8.0+ and `sphinx-rtd-theme` 3.0+
+  - Spell check with [`codespell`](https://github.com/codespell-project/codespell)
+  - Documentation build with [`sphinx`](https://www.sphinx-doc.org) and
+    [`sphinx-rtd-theme`](https://github.com/readthedocs/sphinx_rtd_theme)
   - Testing of code quality with `ruff`
   - Testing of documentation coverage with `docstr-coverage`
-  - Testing of documentation format
+  - Testing of documentation format with `docstrfmt`
   - Testing of package metadata completeness with `pyroma`
   - Strict testing of optional static typing with `mypy`
   - Version management with
