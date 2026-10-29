@@ -21,6 +21,7 @@ if __name__ == "__main__":
 
     match "{{ cookiecutter.runner }}":
         case "just":
+            PROJECT_DIRECTORY.joinpath("tox.ini").unlink()
             PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
         case "tox":
             PROJECT_DIRECTORY.joinpath("noxfile.py").unlink()
